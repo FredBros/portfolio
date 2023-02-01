@@ -1,1 +1,7 @@
 export { default as HomePage } from "./views/HomePage";
+
+export { default as Layout } from "./layout/Layout";
+export { default as Header } from "./layout/Header";
+export { default as Navbar } from "./layout/Navbar";
+export { default as Footer } from "./layout/Footer";
+export { default as MenuButton } from "./layout/MenuButton";

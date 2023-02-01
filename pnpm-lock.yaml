@@ -10,6 +10,7 @@ specifiers:
   eslint-config-next: 13.1.6
   graphql: ^16.6.0
   graphql-request: ^5.1.0
+  hamburgers: ^1.2.1
   next: 13.1.6
   react: 18.2.0
   react-dom: 18.2.0
@@ -27,6 +28,7 @@ dependencies:
   eslint-config-next: 13.1.6_4vsywjlpuriuw3tl5oq6zy5a64
   graphql: 16.6.0
   graphql-request: 5.1.0_graphql@16.6.0
+  hamburgers: 1.2.1
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1270,6 +1272,10 @@ packages:
   /graphql/16.6.0:
     resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+    dev: false
+
+  /hamburgers/1.2.1:
+    resolution: {integrity: sha512-uFuVVF7/MeUtRWrA+S1FGGo4iVi7RgPzZAmljBnSeDh4snOZzaQ+oB6CI1m4vKD5RGz9s70ufgiJLxgivqA26Q==}
     dev: false
 
   /has-bigints/1.0.2:
