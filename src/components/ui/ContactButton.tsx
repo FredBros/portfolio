@@ -4,11 +4,11 @@ import React from 'react'
 const ContactButton = () => {
   return (
     <>
-      <div className="contact-button">
-        <Link href="/contact">
+      <Link href="/contact">
+        <div className="contact-button">
           <p>Contact</p>
-        </Link>
-      </div>
+        </div>
+      </Link>
       <style jsx>{`
         .contact-button {
           height: 100%;
@@ -18,10 +18,13 @@ const ContactButton = () => {
           width: 200px;
           background: var(--green);
           color: var(--background-color);
+          transition: filter ease .3s;
         }
-          p{
-            font-weight: 700;
-          }
+        .contact-button:hover {
+          filter: brightness(1.15);
+        }
+        p {
+          font-weight: 700;
         }
       `}</style>
     </>

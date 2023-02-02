@@ -63,17 +63,17 @@ const Navbar = ({ isOpen }: Props) => {
           transition: transform 0.3s ease-in-out;
           background-color: var(--background-color);
         }
-        .menu-btn-wrap{
-          display:none;
+        .menu-btn-wrap {
+          display: none;
           position: absolute;
           height: 80px;
           width: 80px;
           align-items: center;
           justify-content: center;
           top: 0;
-          right:0;
-
-        } .menu {
+          right: 0;
+        }
+        .menu {
           display: flex;
           flex-direction: column;
           font-size: 1.125rem;
@@ -113,13 +113,20 @@ const Navbar = ({ isOpen }: Props) => {
           color: var(--green);
           gap: 30px;
         }
+        a{
+          transition: all .2s;
+        }
+        a:hover {
+          transform: scale(1.1);
+          filter: brightness(1.15);
+        }
         @media screen and (min-width: 768px) {
           .navbar {
             width: 300px;
             top: 0;
           }
-          .menu-btn-wrap{
-          display:flex;
+          .menu-btn-wrap {
+            display: flex;
           }
           .social-wrap {
             align-items: flex-end;
