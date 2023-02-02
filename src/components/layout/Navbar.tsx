@@ -3,6 +3,7 @@ import React from "react";
 import { menuItems } from "../../utils/menuItems";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
+import MenuButton from "./MenuButton";
 
 
 type Props = {
@@ -13,6 +14,9 @@ const Navbar = ({ isOpen }: Props) => {
   return (
     <>
       <div className="navbar">
+        <div className="menu-btn-wrap">
+          <MenuButton />
+        </div>
         <div className="menu firacode">
           {menuItems.map((item, index) => {
             return (
@@ -55,11 +59,21 @@ const Navbar = ({ isOpen }: Props) => {
           bottom: 0;
           left: -220px;
           border-right: 1px solid var(--green);
-          transform: ${isOpen ? "translateX(100%)" : "translateX(0)"};
+          transform: ${isOpen ? "translateX(220px)" : "translateX(0)"};
           transition: transform 0.3s ease-in-out;
           background-color: var(--background-color);
         }
-        .menu {
+        .menu-btn-wrap{
+          display:none;
+          position: absolute;
+          height: 80px;
+          width: 80px;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          right:0;
+
+        } .menu {
           display: flex;
           flex-direction: column;
           font-size: 1.125rem;
@@ -98,6 +112,18 @@ const Navbar = ({ isOpen }: Props) => {
           flex-direction: column;
           color: var(--green);
           gap: 30px;
+        }
+        @media screen and (min-width: 768px) {
+          .navbar {
+            width: 300px;
+            top: 0;
+          }
+          .menu-btn-wrap{
+          display:flex;
+          }
+          .social-wrap {
+            align-items: flex-end;
+          }
         }
       `}</style>
     </>

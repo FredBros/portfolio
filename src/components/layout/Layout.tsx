@@ -55,6 +55,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           bottom:0;
           width: 100vw;
         }
+        @media screen and (min-width:768px) {
+          .page{
+            margin-left: 80px;
+          }
+        }
       `}</style>
     </>
   );

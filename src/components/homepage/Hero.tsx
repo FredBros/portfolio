@@ -20,7 +20,7 @@ const Hero = ({data}:Props) => {
             rossard
           </Title>
           <Title color={"var(--middle-gray)"}>{data.subtitle}</Title>
-          <h3>{data.paragraph}</h3>
+          <p>{data.paragraph}</p>
           <div className="portrait-wrap">
             <div className="portrait">
               <Image
@@ -35,10 +35,13 @@ const Hero = ({data}:Props) => {
       </SectionContainer>
       <style jsx>{`
         .hero-section {
+          padding-top:80px;
           display: flex;
           flex-direction: column;
           min-height: 100vh;
           justify-content: center;
+          max-width:1000px;
+          margin: 0 auto;
         }
         .hi {
           color: var(--green);
@@ -48,17 +51,17 @@ const Hero = ({data}:Props) => {
         .initial {
           color: var(--green);
         }
-        h3{
+        p{
             margin: 40px 0;
         }
         .portrait-wrap {
           position: relative;
           background-color: var(--green);
-          max-width: 400px;
-          max-height: 400px;
+          max-width: 300px;
+          max-height: 300px;
           height: 60vw;
           width: 60vw;
-          margin: 60px auto 0 auto;
+          margin: 40px auto 0 auto;
           transition: all 0.3s ease-in-out;
         }
 

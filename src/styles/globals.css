@@ -52,6 +52,9 @@ color: inherit;
 #root, #__next {
   isolation: isolate;
 }
+button 
+{ all: unset;
+cursor: pointer; }
 
 .bold{
   font-weight: 600;

@@ -12,3 +12,4 @@ export { default as Hero } from "./homepage/Hero";
 
 export { default as Title } from "./ui/Title";
 export { default as SectionContainer } from "./ui/SectionContainer";
+export { default as ContactButton } from "./ui/ContactButton";
