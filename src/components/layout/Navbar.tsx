@@ -25,11 +25,16 @@ const Navbar = ({ isOpen }: Props) => {
         <div className="social-wrap">
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/fred-brossard-073358206/"
           >
             <BsLinkedin size={"30"} />
           </a>
-          <a target="_blank" href="https://github.com/FredBros">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/FredBros"
+          >
             <BsGithub size={"30"} />
           </a>
           <a href="mailto: fred.b.devweb@gmail.com">
@@ -88,7 +93,7 @@ const Navbar = ({ isOpen }: Props) => {
           transform: scaleX(1);
         }
         .social-wrap {
-            padding: 30px;
+          padding: 30px;
           display: flex;
           flex-direction: column;
           color: var(--green);
