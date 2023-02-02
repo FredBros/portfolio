@@ -27,18 +27,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           overflow-x: hidden;
         }
         main {
-          padding-top: 50px;
+          position: relative;
           width: 100%;
           margin: 0 auto;
-          margin-top: var(--header-height);
           overflow-x: hidden;
         }
         .navbar-wrap {
           position: absolute;
           top: var(--header-height);
           left: 0;
-          right: 0;
           bottom: 0;
+          z-index: 10;
         }
         .page {
           transform: ${isMenuOpen ? "translateX(220px)" : "translateX(0)"};
@@ -54,7 +53,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           position: absolute;
           top: 0;
           bottom:0;
-          width: 100%;
+          width: 100vw;
         }
       `}</style>
     </>

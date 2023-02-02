@@ -1,8 +1,12 @@
-import Head from 'next/head'
-import {HomePage} from "../components/"
+import Head from "next/head";
+import { HomePage } from "../components/";
+import { getHomePageData } from "../services/hygraphRequest";
+import { HomePageData } from "../types/data";
+type Props = {
+  data: HomePageData;
+};
 
-
-export default function Home() {
+export default function Home({ data }: Props) {
   return (
     <>
       <Head>
@@ -12,8 +16,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HomePage />
+        <HomePage data={data} />
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const data = await getHomePageData();
+  return {
+    props: {
+      data,
+    },
+  };
 }

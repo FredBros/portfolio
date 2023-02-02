@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@graphcms/rich-text-react-renderer': ^0.6.1
   '@next/font': 13.1.6
   '@types/node': 18.11.18
   '@types/react': 18.0.27
@@ -19,6 +20,7 @@ specifiers:
   uuid: ^9.0.0
 
 dependencies:
+  '@graphcms/rich-text-react-renderer': 0.6.1_biqbaboplfbrettd7655fr4n2y
   '@next/font': 13.1.6
   '@types/node': 18.11.18
   '@types/react': 18.0.27
@@ -60,6 +62,25 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@graphcms/rich-text-react-renderer/0.6.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-w0OtKf9Fzmf0vI5bzgR502AndRLEeRlmb8x6nxUweDhfNRVKTOiwSEQKetMPpodSZUnXO+PI8J7rqxQvJof2kA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@graphcms/rich-text-types': 0.5.0
+      escape-html: 1.0.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@graphcms/rich-text-types/0.5.0:
+    resolution: {integrity: sha512-3oKVp2V1f9zYn9dYpLvePeu/8w8nQhZyv3FWm7yUtY/AlVXRwU3HJtIXvvdwAkmTuNANNhcDkBOzfkZaKJNADw==}
+    dependencies:
+      tslib: 2.5.0
     dev: false
 
   /@graphql-typed-document-node/core/3.1.1_graphql@16.6.0:
@@ -743,6 +764,10 @@ packages:
       is-callable: 1.2.7
       is-date-object: 1.0.5
       is-symbol: 1.0.4
+    dev: false
+
+  /escape-html/1.0.3:
+    resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
     dev: false
 
   /escape-string-regexp/4.0.0:

@@ -1,9 +1,18 @@
 import React from 'react'
+import { HomePageData } from "@/types/data";
+import {Hero} from "../"
 
-const HomePage = () => {
+type Props = {
+  data: HomePageData;
+};
+const HomePage = ({ data }: Props) => {
+  const {heroes, abouts}= data
+  console.log(heroes);
   return (
-    <div>HomePage</div>
-  )
-}
+    <>
+      <Hero data={heroes[0]} />
+    </>
+  );
+};
 
 export default HomePage

@@ -12,6 +12,7 @@ const Header = () => {
       </div>
       <style jsx>{`
         .header-wrap {
+          z-index: 10;
           height: var(--header-height);
           position: absolute;
           top: 0;

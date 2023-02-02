@@ -53,8 +53,6 @@ const Navbar = ({ isOpen }: Props) => {
           transform: ${isOpen ? "translateX(100%)" : "translateX(0)"};
           transition: transform 0.3s ease-in-out;
           background-color: var(--background-color);
-
-          
         }
         .menu {
           display: flex;
