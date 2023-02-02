@@ -37,6 +37,9 @@ const Header = () => {
           border-bottom: 1px solid var(--green);
           background: var(--background-color);
         }
+        .brand:hover {
+          filter: brightness(1.15);
+        }
         h3 {
           color: var(--green);
           padding: 15px;
