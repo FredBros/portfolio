@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@graphcms/rich-text-react-renderer': ^0.6.1
+  '@graphcms/rich-text-types': ^0.5.0
   '@next/font': 13.1.6
   '@types/node': 18.11.18
   '@types/react': 18.0.27
@@ -21,6 +22,7 @@ specifiers:
 
 dependencies:
   '@graphcms/rich-text-react-renderer': 0.6.1_biqbaboplfbrettd7655fr4n2y
+  '@graphcms/rich-text-types': 0.5.0
   '@next/font': 13.1.6
   '@types/node': 18.11.18
   '@types/react': 18.0.27

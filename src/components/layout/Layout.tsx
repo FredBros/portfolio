@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className="layout">
-        <Header />
+        <Header/>
         <main>
           <div className="navbar-wrap">
             <div className="close-navbar" onClick={toggleMenu}></div>
@@ -52,12 +52,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           display: ${isMenuOpen ? "block" : "none"};
           position: absolute;
           top: 0;
-          bottom:0;
+          bottom: 0;
           width: 100vw;
         }
-        @media screen and (min-width:768px) {
-          .page{
-            margin-left: 80px;
+        @media screen and (min-width: 768px) {
+          .page {
+            padding-left: 80px;
           }
         }
       `}</style>

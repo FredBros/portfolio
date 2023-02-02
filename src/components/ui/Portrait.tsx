@@ -1,59 +1,23 @@
 import React from 'react'
-import { HeroData } from "@/types/data";
-import {Title,SectionContainer} from "../"
-import Image from 'next/image'
+import Image from "next/image";
 
 type Props = {
-data: HeroData
+    url:string
 }
-
-
-const Hero = ({data}:Props) => {
+const Portrait = ({url}:Props) => {
   return (
     <>
-      <SectionContainer>
-        <div className="hero-section">
-          <div className="hi firacode">Hi, my name is</div>
-          <Title>
-            <span className="initial">F</span>red{" "}
-            <span className="initial">B</span>
-            rossard
-          </Title>
-          <Title color={"var(--middle-gray)"}>{data.subtitle}</Title>
-          <p>{data.paragraph}</p>
-          <div className="portrait-wrap">
-            <div className="portrait">
-              <Image
-                alt="Fred Brossard Portrait"
-                src={data.picture.url}
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-          </div>
+      <div className="portrait-wrap">
+        <div className="portrait">
+          <Image
+            alt="Fred Brossard Portrait"
+            src={url}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
-      </SectionContainer>
+      </div>
       <style jsx>{`
-        .hero-section {
-          padding-top:80px;
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-          justify-content: center;
-          max-width:1000px;
-          margin: 0 auto;
-        }
-        .hi {
-          color: var(--green);
-          font-size: 1.125rem;
-          margin-bottom: 20px;
-        }
-        .initial {
-          color: var(--green);
-        }
-        p{
-            margin: 40px 0;
-        }
         .portrait-wrap {
           position: relative;
           background-color: var(--green);
@@ -61,10 +25,9 @@ const Hero = ({data}:Props) => {
           max-height: 300px;
           height: 60vw;
           width: 60vw;
-          margin: 40px auto 0 auto;
+          margin: 40px auto 50px auto;
           transition: all 0.3s ease-in-out;
         }
-
         .portrait-wrap::after {
           z-index: -1;
           position: absolute;
@@ -103,9 +66,11 @@ const Hero = ({data}:Props) => {
         .portrait-wrap:hover::after {
           transform: translate(10%, 10%);
         }
+         {
+        }
       `}</style>
     </>
   );
 }
 
-export default Hero
+export default Portrait

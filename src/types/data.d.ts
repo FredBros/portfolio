@@ -1,3 +1,7 @@
+import { ElementNode } from "@graphcms/rich-text-types";
+
+
+
 export type DataContextType ={
     isMenuOpen : boolean
     toggleMenu : ()=>void;
@@ -17,9 +21,15 @@ export type HeroData = {
 
 type HeroesData = HeroData[];
 
+
+
 export type AboutData = {
   title: string;
-  paragraph: string;
+  description: {
+    raw: {
+      children: ElementNode[];
+    };
+  };
   portrait: {
     height: number;
     url: string;
