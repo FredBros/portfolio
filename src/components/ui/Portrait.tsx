@@ -3,8 +3,9 @@ import Image from "next/image";
 
 type Props = {
     url:string
+    priority?: boolean
 }
-const Portrait = ({url}:Props) => {
+const Portrait = ({ url, priority=false}: Props) => {
   return (
     <>
       <div className="portrait-wrap">
@@ -14,6 +15,8 @@ const Portrait = ({url}:Props) => {
             src={url}
             fill
             style={{ objectFit: "cover" }}
+            sizes="(max-width: 600px) 60vw, 300px"
+            priority={priority}
           />
         </div>
       </div>
@@ -71,6 +74,6 @@ const Portrait = ({url}:Props) => {
       `}</style>
     </>
   );
-}
+};
 
 export default Portrait

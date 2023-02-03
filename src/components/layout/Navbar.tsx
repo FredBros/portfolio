@@ -52,7 +52,7 @@ const Navbar = ({ isOpen }: Props) => {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          padding-top: 100px;
+          padding-top: 20px;
           position: fixed;
           top: var(--header-height);
           width: 220px;
@@ -113,8 +113,8 @@ const Navbar = ({ isOpen }: Props) => {
           color: var(--green);
           gap: 30px;
         }
-        a{
-          transition: all .2s;
+        a {
+          transition: all 0.2s;
         }
         a:hover {
           transform: scale(1.1);
@@ -124,6 +124,7 @@ const Navbar = ({ isOpen }: Props) => {
           .navbar {
             width: 300px;
             top: 0;
+            padding-top: 100px;
           }
           .menu-btn-wrap {
             display: flex;

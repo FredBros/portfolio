@@ -8,7 +8,7 @@ const SectionContainer = ({ isBordered=true, children }: { isBordered?:boolean, 
         .section-container {
           padding: 0 20px;
           margin-top: 80px;
-          border-top: ${isBordered ? "solid 1px var(--green)" : ""};
+          ${isBordered ? "border-top: solid 1px var(--green)" : ""};
         }
       `}</style>{" "}
     </section>

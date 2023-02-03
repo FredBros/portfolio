@@ -6,7 +6,6 @@ type Props={
   data:AboutData
 }
 const AboutSection = ({data}:Props) => {
-  console.log(data)
   return (
     <>
       <SectionContainer>

@@ -39,7 +39,30 @@ export type AboutData = {
 
 type AboutsData = AboutData[];
 
+type ProjectsSectionData= {
+  description: string;
+  title: string;
+}
+type ProjectsSectionsData = ProjectsSectionData[];
+
+type CardProjectData = {
+  title: string;
+  subtitle: string;
+  cardImage: {
+    height: number;
+    url: string;
+    width: number;
+  };
+  githubLink: string;
+  slug: string;
+  techno:[string];
+  websiteLink: string;
+};
+
+type CardsProjectData = CardProjectData[]
 export type HomePageData = {
   heroes: HeroesData;
   abouts: AboutsData;
+  projectsSections: ProjectsSectionsData;
+  projects: CardsProjectData;
 };

@@ -26,6 +26,23 @@ export const getHomePageData = async () => {
           raw
         }
       }
+      projectsSections(orderBy: publishedAt_ASC, first: 1) {
+        description
+        title
+      }
+      projects(orderBy: updatedAt_ASC) {
+        cardImage {
+          height
+          url
+          width
+        }
+        githubLink
+        slug
+        subtitle
+        techno
+        title
+        websiteLink
+      }
     }
   `;
   const result = await request(graphqlAPI, query);

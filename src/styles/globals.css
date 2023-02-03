@@ -33,7 +33,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: .2rem;
+  letter-spacing: .1rem;
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color);
   color: var(--foregroung-color);
@@ -65,4 +65,15 @@ cursor: pointer; }
 }
 .firacode{
   font-family:  'Fira Code', monospace;
+}
+
+
+/* react-multi-carousel-css */
+
+.react-multi-carousel-dot button{
+  border-color: var(--green) !important;
+}
+
+.react-multi-carousel-dot--active button {
+    background: var(--neon-green) !important;
 }

@@ -21,7 +21,7 @@ const HeroSection = ({ data }: Props) => {
             </Title>
             <Title color={"var(--middle-gray)"}>{data.subtitle}</Title>
             <p>{data.paragraph}</p>
-            <Portrait url={data.picture.url} />
+            <Portrait url={data.picture.url} priority={true}/>
           </div>
         </VerticalSection>
       </SectionContainer>
