@@ -7,6 +7,10 @@ type Props = {
   data: ProjectsSectionData;
   cardsData: CardsProjectData;
 };
+
+
+const isEven=(value:number)=>(value + 1) % 2 === 0;
+
 const ProjectsSection = ({data, cardsData}:Props) => {
   return (
     <>
@@ -22,7 +26,12 @@ const ProjectsSection = ({data, cardsData}:Props) => {
             </div>
             <div className="projects-list">
               {cardsData.map((card, index) => (
-                <CardProject key={index} cardData={card} />
+                <CardProject
+                  key={index}
+                  cardData={card}
+                  isEven={isEven(index)}
+                  isLargeScreen={true}
+                />
               ))}
             </div>
           </div>

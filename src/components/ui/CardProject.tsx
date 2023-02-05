@@ -1,7 +1,7 @@
 import React from 'react'
 import { TechList } from "../";
 import {CardProjectData} from "../../types/data"
-import { CgMoreO} from "react-icons/cg"
+import { CgLaptop, CgMoreO} from "react-icons/cg"
 import { BsGithub } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import Link from 'next/link';
@@ -11,12 +11,15 @@ import { Tooltip } from "react-tooltip";
 
 type Props ={
     cardData: CardProjectData
+    isEven?:boolean
+    isLargeScreen?:boolean
 }
 
-const CardProject = ({cardData}:Props) => {
+const CardProject = ({cardData, isEven, isLargeScreen=false}:Props) => {
+
   
   return (
-    <div className="card-project-wrap">
+    <div className={`card-project-wrap ${isLargeScreen ? "large-screen" : ""}`}>
       <h3 className="firacode card-title">{cardData.title}</h3>
       <div className="card-content">
         <p>{cardData.subtitle}</p>
@@ -75,6 +78,10 @@ const CardProject = ({cardData}:Props) => {
           border: 1px solid var(--green);
           padding: 0 10px;
           height: 350px;
+        }
+        .large-screen {
+          grid-column: ${isEven ? "1 / 2" : "2 / 3"};
+          transform: ${isEven ? "translateY(-80%)" : ""};
         }
         .card-title {
           position: absolute;
@@ -140,6 +147,14 @@ const CardProject = ({cardData}:Props) => {
           position: relative;
           object-fit: contain;
           max-height: 100%;
+        }
+        @media screen and (min-width: 100px) {
+          .card-project-wrap{
+            height: 450px;
+          } 
+          .image-card-wrap {
+            height: 50%;
+          }
         }
       `}</style>
     </div>
