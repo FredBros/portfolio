@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className="layout">
-        {/* <Header/> */}
+        <Header/>
         <main>
           <div className="navbar-wrap">
             <div className="close-navbar" onClick={toggleMenu}></div>

@@ -9,7 +9,7 @@ type Props = {
 };
 
 
-const isEven=(value:number)=>(value + 1) % 2 === 0;
+// const isEven=(value:number)=>(value + 1) % 2 === 0;
 
 const ProjectsSection = ({data, cardsData}:Props) => {
   return (
@@ -24,7 +24,7 @@ const ProjectsSection = ({data, cardsData}:Props) => {
             <div className="carousel">
               <ProjectsCarousel cardsData={cardsData} />
             </div>
-            <div className="projects-list">
+            {/* <div className="projects-list">
               {cardsData.map((card, index) => (
                 <CardProject
                   key={index}
@@ -33,7 +33,7 @@ const ProjectsSection = ({data, cardsData}:Props) => {
                   isLargeScreen={true}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </VerticalSection>
       </SectionContainer>
