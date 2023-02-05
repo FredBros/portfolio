@@ -10,10 +10,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className="layout">
         <Header/>
         <main>
-          <div className="navbar-wrap">
+          {/* <div className="navbar-wrap">
             <div className="close-navbar" onClick={toggleMenu}></div>
             <Navbar isOpen={isMenuOpen} />
-          </div>
+          </div> */}
           <div className="page">{children}</div>
         </main>
         <Footer />

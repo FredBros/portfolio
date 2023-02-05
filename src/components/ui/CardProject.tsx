@@ -1,7 +1,7 @@
 import React from 'react'
 import { TechList } from "../";
 import {CardProjectData} from "../../types/data"
-import { CgLaptop, CgMoreO} from "react-icons/cg"
+import { CgMoreO} from "react-icons/cg"
 import { BsGithub } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import Link from 'next/link';
