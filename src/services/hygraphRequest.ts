@@ -10,7 +10,11 @@ export const getHomePageData = async () => {
         paragraph
         picture {
           height
-          url
+          url(
+            transformation: {
+              image: { resize: { fit: scale, height: 300  } }
+            }
+          )
           width
         }
         title
@@ -19,7 +23,11 @@ export const getHomePageData = async () => {
         title
         portrait {
           height
-          url
+          url(
+            transformation: {
+              image: { resize: { fit: scale, height: 300  } }
+            }
+          )
           width
         }
         description {
@@ -33,7 +41,11 @@ export const getHomePageData = async () => {
       projects(orderBy: updatedAt_ASC) {
         cardImage {
           height
-          url
+          url(
+            transformation: {
+              image: { resize: { fit: scale, height: 300  } }
+            }
+          )
           width
         }
         githubLink

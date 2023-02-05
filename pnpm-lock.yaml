@@ -18,6 +18,7 @@ specifiers:
   react-dom: 18.2.0
   react-icons: ^4.7.1
   react-multi-carousel: ^2.8.2
+  react-tooltip: ^5.7.4
   typescript: 4.9.5
   uuid: ^9.0.0
 
@@ -39,6 +40,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
   react-multi-carousel: 2.8.2
+  react-tooltip: 5.7.4_biqbaboplfbrettd7655fr4n2y
   typescript: 4.9.5
   uuid: 9.0.0
 
@@ -66,6 +68,16 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@floating-ui/core/1.1.1:
+    resolution: {integrity: sha512-PL7g3dhA4dHgZfujkuD8Q+tfJJynEtnNQSPzmucCnxMvkxf4cLBJw/ZYqZUn4HCh33U3WHrAfv2R2tbi9UCSmw==}
+    dev: false
+
+  /@floating-ui/dom/1.1.1:
+    resolution: {integrity: sha512-TpIO93+DIujg3g7SykEAGZMDtbJRrmnYRCNYSjJlvIbGhBjRSNTLVbNeDQBrzy9qDgUbiWdc7KA0uZHZ2tJmiw==}
+    dependencies:
+      '@floating-ui/core': 1.1.1
     dev: false
 
   /@graphcms/rich-text-react-renderer/0.6.1_biqbaboplfbrettd7655fr4n2y:
@@ -540,6 +552,10 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+    dev: false
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /client-only/0.0.1:
@@ -1944,6 +1960,18 @@ packages:
   /react-multi-carousel/2.8.2:
     resolution: {integrity: sha512-M9Y7DfAp8bA/r6yexttU6RLA7uyppje4c0ELRuCHZWswH+u7nr0uVP6qHNPjc4XGOEY1MYFOb5nBg7JvoKutuQ==}
     engines: {node: '>=8'}
+    dev: false
+
+  /react-tooltip/5.7.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Eocnm5Dl6numT52CXLVecX5p93W4ifU3TIbhGqrNfFw2KY7ES2tZDPQHH5yQ1OSWhAcxWZImuFRcUwe+W/vTig==}
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
+    dependencies:
+      '@floating-ui/dom': 1.1.1
+      classnames: 2.3.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react/18.2.0:

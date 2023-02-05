@@ -16,5 +16,6 @@ export { default as SectionContainer } from "./ui/SectionContainer";
 export { default as ContactButton } from "./ui/ContactButton";
 export { default as VerticalSection } from "./ui/VerticalSection";
 export { default as TitleSection } from "./ui/TitleSection";
-export { default as Portrait } from "./ui/Portrait";
+export { default as StyledImage } from "./ui/StyledImage";
 export { default as CardProject } from "./ui/CardProject";
+export { default as TechList } from "./ui/TechList";

@@ -42,10 +42,10 @@ const ProjectsCarousel = ({ cardsData }: Props) => {
           <CardProject key={index} cardData={cardData} />
         ))}
       </Carousel>
-        <style jsx>{`
+      <style jsx>{`
           .carousel-container {
             margin-top: 40px;
-          }
+          }         
         `}</style>
     </div>
   );

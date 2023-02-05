@@ -1,6 +1,6 @@
 import React from "react";
 import { HeroData } from "@/types/data";
-import { Title, SectionContainer, VerticalSection, Portrait } from "..";
+import { Title, SectionContainer, VerticalSection, StyledImage } from "..";
 import Image from "next/image";
 
 type Props = {
@@ -21,7 +21,9 @@ const HeroSection = ({ data }: Props) => {
             </Title>
             <Title color={"var(--middle-gray)"}>{data.subtitle}</Title>
             <p>{data.paragraph}</p>
-            <Portrait url={data.picture.url} priority={true}/>
+            <div className="image-wrap">
+              <StyledImage url={data.picture.url} />
+            </div>
           </div>
         </VerticalSection>
       </SectionContainer>
@@ -43,15 +45,12 @@ const HeroSection = ({ data }: Props) => {
         p {
           margin: 40px 0;
         }
-        .portrait-wrap {
-          position: relative;
-          background-color: var(--green);
+        .image-wrap {
           max-width: 300px;
           max-height: 300px;
           height: 60vw;
           width: 60vw;
-          margin: 40px auto 0 auto;
-          transition: all 0.3s ease-in-out;
+          margin: 40px auto 50px auto;
         }
 
         .portrait-wrap::after {
