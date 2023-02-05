@@ -18,14 +18,12 @@ const CardProject = ({cardData}:Props) => {
       <h3 className="firacode card-title">{cardData.title}</h3>
       <div className="card-content">
         <p>{cardData.subtitle}</p>
-        <div className="image-wrap">
-          <Image
-            alt={cardData.title}
-            src={cardData.cardImage.url}
-            fill
-            style={{ objectFit: "contain" }}
-            sizes="(max-width: 600px) 60vw, 300px"
-          />
+        <div className="image-card-wrap">
+          <div className="styled-image-wrap">
+            <div className="image-layout">
+              <img alt={cardData.title} src={cardData.cardImage.url} />
+            </div>
+          </div>
         </div>
         <div className="card-footer">
           <div className="external-links">
@@ -47,7 +45,7 @@ const CardProject = ({cardData}:Props) => {
         .card-project-wrap {
           margin: 10px;
           border: 1px solid var(--green);
-          padding: 0 10px 10px 10px;
+          padding: 0 10px 0 10px;
           height: 350px;
         }
         .card-title {
@@ -65,17 +63,40 @@ const CardProject = ({cardData}:Props) => {
           flex-direction: column;
           justify-content: space-between;
         }
-        .image-wrap {
-          margin: 15px 0;
+        .image-card-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40%;
+          margin: 15px;
           position: relative;
-          width: auto;
-          height: 200px;
+        }
+        .styled-image-wrap {
+          display: block;
+          height: 100%;
+          background-color: var(--green);
+          mix-blend-mode: screen;
+        }
+        .image-layout {
+          height: 100%;
+          mix-blend-mode: multiply;
+          filter: grayscale(100%) contrast(1);
+        }
+        .card-project-wrap:hover .image-layout {
+          mix-blend-mode: normal;
+          filter: none;
+        }
+        img {
+          position: relative;
+          object-fit: contain;
+          max-height: 100%;
         }
         .card-footer {
           display: flex;
           justify-content: space-between;
           color: var(--green);
           transition: all 0.3s ease-in-out;
+          padding: 0 0 10px 0;
         }
         .external-links {
           display: flex;
