@@ -62,3 +62,21 @@ export const getHomePageData = async () => {
   const result = await request(graphqlAPI, query);
   return result;
 };
+
+export const GetContactData = async () => {
+  const query = gql`
+    query getContactData {
+      contacts(first: 1, orderBy: publishedAt_DESC) {
+        email
+        paragraph {
+          raw
+        }
+        subtitle
+        title
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  console.log(result.contacts)
+  return result.contacts;
+};
