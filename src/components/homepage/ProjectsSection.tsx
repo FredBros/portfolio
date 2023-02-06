@@ -56,6 +56,7 @@ const ProjectsSection = ({data, cardsData}:Props) => {
             grid-row-gap: 80px;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
+            
           }
         }
       `}</style>

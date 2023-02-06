@@ -3,9 +3,10 @@ import { BiCaretRight} from "react-icons/bi"
 
 type Props = {
     data: [string]
+    color?:string
 }
 
-const TechList = ({data }:Props) => {
+const TechList = ({data, color }:Props) => {
   return (
     <ul className="tech-list">
       {data.map((tech, index) => (
@@ -24,7 +25,7 @@ const TechList = ({data }:Props) => {
           font-size: 0.75rem;
           font-weight: 100;
           letter-spacing: 0.03rem;
-          color: var(--green);
+          color: ${color || "inherit"};
         }
         li {
           display: flex;

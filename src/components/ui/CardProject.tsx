@@ -27,45 +27,52 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
             </div>
           </div>
         </div>
-        <TechList data={cardData.techno} />
         <div className="card-footer">
-          <div className="external-links">
-            <div className="animated-link">
+          <TechList data={cardData.techno} />
+          <div className="links-wrap">
+            <div className="external-links">
+                <Tooltip
+                  direction={"right"}
+                  delay={300}
+                  content="view repository"
+                  backgroundColor={"var(--dark-gray)"}
+                  color={"var(--foregroung-color)"}
+                >
+                  <a
+                    href={cardData.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <BsGithub size={32} />
+                  </a>
+                </Tooltip>
+                <Tooltip
+                  delay={300}
+                  content="view website"
+                  backgroundColor={"var(--dark-gray)"}
+                  color={"var(--foregroung-color)"}
+                >
+                  <a
+                    href={cardData.websiteLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiExternalLink size={32} />
+                  </a>
+                </Tooltip>
+            </div>
+            <div className="see-more ">
               <Tooltip
                 delay={300}
-                content="view repository"
+                content="more informations"
                 backgroundColor={"var(--dark-gray)"}
                 color={"var(--foregroung-color)"}
               >
-                <a href={cardData.githubLink} target="_blank" rel="noreferrer">
-                  <BsGithub size={32} />
-                </a>
+                <Link href={`/projects/${cardData.slug}`}>
+                  <CgMoreO size={32} />
+                </Link>
               </Tooltip>
             </div>
-            <div className="animated-link">
-              <Tooltip
-                delay={300}
-                content="view website"
-                backgroundColor={"var(--dark-gray)"}
-                color={"var(--foregroung-color)"}
-              >
-                <a href={cardData.websiteLink} target="_blank" rel="noreferrer">
-                  <FiExternalLink size={32} />
-                </a>
-              </Tooltip>
-            </div>
-          </div>
-          <div className="see-more animated-link">
-            <Tooltip
-              delay={300}
-              content="more informations"
-              backgroundColor={"var(--dark-gray)"}
-              color={"var(--foregroung-color)"}
-            >
-              <Link href={`/projects/${cardData.slug}`}>
-                <CgMoreO size={32} />
-              </Link>
-            </Tooltip>
           </div>
         </div>
       </div>
@@ -73,7 +80,6 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         .card-project-wrap {
           margin: 10px;
           border: 1px solid var(--green);
-          padding: 0 10px;
           height: 350px;
         }
         .large-screen {
@@ -86,43 +92,56 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           background-color: var(--background-color);
           color: var(--green);
           transform: translateY(-50%);
-          padding: 0 5px;
+          padding: 0 5px 0 10px;
         }
         .card-content {
+          padding: 0 10px;
+          position: relative;
           padding-top: 15px;
           height: 100%;
           max-height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: flex-start;
         }
         .image-card-wrap {
           overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 35%;
+
           margin: 15px;
           position: relative;
           transition: all 0.3s;
         }
         .card-footer {
-          padding: 3px 5px 10px 5px;
+          color: var(--foreground-color);
+          padding: 10px;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          transition: opacity 0.3s ease-in-out;
+        }
+        .links-wrap {
+          color: var(--green);
           display: flex;
           justify-content: space-between;
-          color: var(--green);
           transition: all 0.3s ease-in-out;
         }
         .external-links {
+          position: relative;
           display: flex;
           gap: 20px;
         }
-        .animated-link {
-          transition: all 0.3s ease-in-out;
-        }
-        .animated-link:hover {
-          transform: scale(1.1);
-          filter: brightness(1.15);
+        
+        a {
+          position: relative;
+          z-index:0;
         }
         .styled-image-wrap {
           display: block;
@@ -141,6 +160,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           filter: none;
         }
         .image-card-wrap:hover {
+          z-index: 2;
           overflow: visible;
           transform: scale(1.2);
         }
@@ -155,7 +175,6 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
             height: 450px;
           }
           .image-card-wrap {
-            height: 50%;
           }
         }
       `}</style>
