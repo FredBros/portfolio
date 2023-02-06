@@ -1,23 +1,18 @@
-import React from 'react'
+import React from "react";
 import { TechList } from "../";
-import {CardProjectData} from "../../types/data"
-import { CgMoreO} from "react-icons/cg"
+import { CardProjectData } from "../../types/data";
+import { CgMoreO } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
-import Link from 'next/link';
-import { Tooltip } from "react-tooltip";
+import Link from "next/link";
 
+type Props = {
+  cardData: CardProjectData;
+  isEven?: boolean;
+  isLargeScreen?: boolean;
+};
 
-
-type Props ={
-    cardData: CardProjectData
-    isEven?:boolean
-    isLargeScreen?:boolean
-}
-
-const CardProject = ({cardData, isEven, isLargeScreen=false}:Props) => {
-
-  
+const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
   return (
     <div className={`card-project-wrap ${isLargeScreen ? "large-screen" : ""}`}>
       <h3 className="firacode card-title">{cardData.title}</h3>
@@ -33,43 +28,18 @@ const CardProject = ({cardData, isEven, isLargeScreen=false}:Props) => {
         <TechList data={cardData.techno} />
         <div className="card-footer">
           <div className="external-links">
-            <a
-              id={`github-${cardData.slug}`}
-              href={cardData.githubLink}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={cardData.githubLink} target="_blank" rel="noreferrer">
               <BsGithub size={32} />
             </a>
-            <Tooltip
-              anchorId={`github-${cardData.slug}`}
-              content="open Github repository"
-              place="top"
-            />
-            <a
-              id={`website-${cardData.slug}`}
-              href={cardData.websiteLink}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={cardData.websiteLink} target="_blank" rel="noreferrer">
               <FiExternalLink size={32} />
             </a>
-            <Tooltip
-              anchorId={`website-${cardData.slug}`}
-              content="open website"
-              place="top"
-            />
           </div>
-          <div id={`seemore-${cardData.slug}`} className="see-more">
+          <div className="see-more">
             <Link href={`/projects/${cardData.slug}`}>
               <CgMoreO size={32} />
             </Link>
           </div>
-          <Tooltip
-            anchorId={`seemore-${cardData.slug}`}
-            content="more informations"
-            place="top"
-          />
         </div>
       </div>
       <style jsx>{`
@@ -149,9 +119,9 @@ const CardProject = ({cardData, isEven, isLargeScreen=false}:Props) => {
           max-height: 100%;
         }
         @media screen and (min-width: 100px) {
-          .card-project-wrap{
+          .card-project-wrap {
             height: 450px;
-          } 
+          }
           .image-card-wrap {
             height: 50%;
           }
@@ -159,6 +129,6 @@ const CardProject = ({cardData, isEven, isLargeScreen=false}:Props) => {
       `}</style>
     </div>
   );
-}
+};
 
-export default CardProject
+export default CardProject;
