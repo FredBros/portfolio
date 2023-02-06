@@ -19,7 +19,6 @@ const TechList = ({data, color }:Props) => {
         .tech-list {
           display: flex;
           flex-wrap: wrap;
-          gap: 10px;
           margin-bottom: 10px;
           line-height: 0.5;
           font-size: 0.75rem;
@@ -28,6 +27,7 @@ const TechList = ({data, color }:Props) => {
           color: ${color || "inherit"};
         }
         li {
+          padding-left: 5px;
           display: flex;
           align-items: center;
         }

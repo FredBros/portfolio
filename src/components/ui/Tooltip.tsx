@@ -41,9 +41,9 @@ const Tooltip = (props:Props) => {
       )}
       <style jsx>{`
         .Tooltip-Tip {
-          border-color: ${props.backgroundColor || "black"};
+          border: solid 1px var(--green);
           color: ${props.color || "white"};
-          background-color: ${props.backgroundColor || "black"};
+          background-color: ${props.backgroundColor || "var(--tooltip-background-color"};
         }
       `}</style>
     </div>

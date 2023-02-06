@@ -64,6 +64,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
             <div className="see-more ">
               <Tooltip
                 delay={300}
+                direction={"left"}
                 content="more informations"
                 backgroundColor={"var(--dark-gray)"}
                 color={"var(--foregroung-color)"}
@@ -95,7 +96,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           padding: 0 5px 0 10px;
         }
         .card-content {
-          padding: 0 10px;
+          padding: 0 10px 80px;
           position: relative;
           padding-top: 15px;
           height: 100%;
@@ -109,22 +110,17 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           display: flex;
           align-items: center;
           justify-content: center;
-
-          margin: 15px;
+          margin: 10px 10px 2px 10px;
           position: relative;
           transition: all 0.3s;
         }
         .card-footer {
           color: var(--foreground-color);
-          padding: 10px;
+          padding: 5px 10px;
           position: absolute;
           width: 100%;
           left: 0;
           bottom: 0;
-          background: rgba(0, 0, 0, 0.4);
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(5px);
-          -webkit-backdrop-filter: blur(5px);
           transition: opacity 0.3s ease-in-out;
         }
         .links-wrap {
