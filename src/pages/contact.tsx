@@ -1,6 +1,7 @@
 import { ContactsData } from '@/types/data'
 import React from 'react'
 import {GetContactData} from "../services/hygraphRequest"
+import { ContactPage } from '@/components'
 
 type Props={
   data: ContactsData
@@ -8,7 +9,9 @@ type Props={
 const contact = ({data}:Props) => {
 console.log(data[0])
   return (
-    <div>contact</div>
+    <>
+    <ContactPage data={data[0]}/>
+    </>
   )
 }
 

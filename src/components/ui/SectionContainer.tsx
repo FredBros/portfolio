@@ -1,6 +1,13 @@
 import React from 'react'
 
-const SectionContainer = ({ isBordered=true, children, padding=20 }: { isBordered?:boolean, children: React.ReactNode, padding: number }) => {
+type Props = {
+  isBordered?: boolean;
+  children: React.ReactNode;
+  padding?: number;
+  isPage?: boolean;
+};
+
+const SectionContainer = ({ isBordered=true, children, padding=20 }:Props) => {
   return (
     <section className="section-container">
       {children}

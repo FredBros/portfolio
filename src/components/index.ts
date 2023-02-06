@@ -1,4 +1,5 @@
 export { default as HomePage } from "./views/HomePage";
+export { default as ContactPage } from "./views/ContactPage";
 
 export { default as Layout } from "./layout/Layout";
 export { default as Header } from "./layout/Header";
@@ -22,3 +23,4 @@ export { default as CardProject } from "./ui/CardProject";
 export { default as TechList } from "./ui/TechList";
 export { default as Tooltip } from "./ui/Tooltip";
 export { default as MailButton } from "./ui/MailButton";
+export { default as ContactContent } from "./ui/ContactContent";
