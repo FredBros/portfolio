@@ -31,6 +31,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           <TechList data={cardData.techno} />
           <div className="links-wrap">
             <div className="external-links">
+              <div className="animated-link">
                 <Tooltip
                   direction={"right"}
                   delay={300}
@@ -46,6 +47,8 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
                     <BsGithub size={32} />
                   </a>
                 </Tooltip>
+              </div>
+              <div className="animated-link">
                 <Tooltip
                   delay={300}
                   content="view website"
@@ -60,8 +63,9 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
                     <FiExternalLink size={32} />
                   </a>
                 </Tooltip>
+              </div>
             </div>
-            <div className="see-more ">
+            <div className="see-more animated-link">
               <Tooltip
                 delay={300}
                 direction={"left"}
@@ -134,10 +138,17 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           display: flex;
           gap: 20px;
         }
-        
+
         a {
           position: relative;
-          z-index:0;
+          z-index: 0;
+        }
+        .animated-link {
+          animation: all 0.3s ease-in-out;
+        }
+        .animated-link:hover {
+          transform: scale(1.1);
+          filter: brightness(1.15);
         }
         .styled-image-wrap {
           display: block;
