@@ -11,9 +11,7 @@ export const getHomePageData = async () => {
         picture {
           height
           url(
-            transformation: {
-              image: { resize: { fit: scale, height: 300  } }
-            }
+            transformation: { image: { resize: { fit: scale, height: 300 } } }
           )
           width
         }
@@ -24,9 +22,7 @@ export const getHomePageData = async () => {
         portrait {
           height
           url(
-            transformation: {
-              image: { resize: { fit: scale, height: 300  } }
-            }
+            transformation: { image: { resize: { fit: scale, height: 300 } } }
           )
           width
         }
@@ -42,9 +38,7 @@ export const getHomePageData = async () => {
         cardImage {
           height
           url(
-            transformation: {
-              image: { resize: { fit: scale, height: 300  } }
-            }
+            transformation: { image: { resize: { fit: scale, height: 300 } } }
           )
           width
         }
@@ -54,6 +48,14 @@ export const getHomePageData = async () => {
         techno
         title
         websiteLink
+      }
+      contacts(first: 1, orderBy: publishedAt_DESC) {
+        email
+        paragraph {
+          raw
+        }
+        subtitle
+        title
       }
     }
   `;

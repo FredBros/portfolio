@@ -45,6 +45,8 @@ const ProjectsCarousel = ({ cardsData }: Props) => {
       <style jsx>{`
           .carousel-container {
             margin-top: 40px;
+            padding-bottom: 40px;
+            position: relative;
           }         
         `}</style>
     </div>

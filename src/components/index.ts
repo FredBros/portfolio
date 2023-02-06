@@ -10,6 +10,7 @@ export { default as HeroSection } from "./homepage/HeroSection";
 export { default as AboutSection } from "./homepage/AboutSection";
 export { default as ProjectsSection } from "./homepage/ProjectsSection";
 export { default as ProjectsCarousel } from "./homepage/ProjectsCarousel";
+export { default as ContactSection } from "./homepage/ContactSection";
 
 export { default as Title } from "./ui/Title";
 export { default as SectionContainer } from "./ui/SectionContainer";
@@ -20,3 +21,4 @@ export { default as StyledImage } from "./ui/StyledImage";
 export { default as CardProject } from "./ui/CardProject";
 export { default as TechList } from "./ui/TechList";
 export { default as Tooltip } from "./ui/Tooltip";
+export { default as MailButton } from "./ui/MailButton";

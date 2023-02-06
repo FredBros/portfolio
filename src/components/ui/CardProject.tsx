@@ -37,7 +37,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
                   delay={300}
                   content="view repository"
                   backgroundColor={"var(--dark-gray)"}
-                  color={"var(--foregroung-color)"}
+                  color={"var(--foreground-color)"}
                 >
                   <a
                     href={cardData.githubLink}
@@ -53,7 +53,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
                   delay={300}
                   content="view website"
                   backgroundColor={"var(--dark-gray)"}
-                  color={"var(--foregroung-color)"}
+                  color={"var(--foreground-color)"}
                 >
                   <a
                     href={cardData.websiteLink}
@@ -71,7 +71,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
                 direction={"left"}
                 content="more informations"
                 backgroundColor={"var(--dark-gray)"}
-                color={"var(--foregroung-color)"}
+                color={"var(--foreground-color)"}
               >
                 <Link href={`/projects/${cardData.slug}`}>
                   <CgMoreO size={32} />

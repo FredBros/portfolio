@@ -60,9 +60,21 @@ type CardProjectData = {
 };
 
 type CardsProjectData = CardProjectData[]
+
+type ContactData = {
+  email: string;
+  paragraph: {
+    raw: {children: ElementNode[]};
+  }
+  subtitle: string;
+  title: string
+}
+type ContactsData = ContactData[]
+
 export type HomePageData = {
   heroes: HeroesData;
   abouts: AboutsData;
   projectsSections: ProjectsSectionsData;
   projects: CardsProjectData;
+  contacts: ContactsData
 };

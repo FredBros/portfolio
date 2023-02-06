@@ -8,7 +8,7 @@
   --green: #c0ff6b;
   --neon-green: #39ff14;
   --background-color: #404040;
-  --foregroung-color: #e0e0e0;
+  --foreground-color: #e0e0e0;
 }
 
 
@@ -36,7 +36,7 @@ body {
   letter-spacing: .1rem;
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color);
-  color: var(--foregroung-color);
+  color: var(--foreground-color);
 }
 img, picture, video, canvas, svg {
   display: block;

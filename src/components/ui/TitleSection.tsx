@@ -13,6 +13,7 @@ const TitleSection = ({ children }: { children: React.ReactNode }) => {
             font-size: 1.5rem;
             transform: translateY(-50%);
             z-index: 1;
+            margin-bottom: 50px
         }
       `}</style>
     </h2>
