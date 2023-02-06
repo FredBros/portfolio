@@ -1,10 +1,12 @@
 import React from "react";
-import { TechList } from "../";
+import { TechList, Tooltip } from "../";
 import { CardProjectData } from "../../types/data";
 import { CgMoreO } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
+
+
 
 type Props = {
   cardData: CardProjectData;
@@ -28,17 +30,42 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         <TechList data={cardData.techno} />
         <div className="card-footer">
           <div className="external-links">
-            <a href={cardData.githubLink} target="_blank" rel="noreferrer">
-              <BsGithub size={32} />
-            </a>
-            <a href={cardData.websiteLink} target="_blank" rel="noreferrer">
-              <FiExternalLink size={32} />
-            </a>
+            <div className="animated-link">
+              <Tooltip
+                delay={300}
+                content="view repository"
+                backgroundColor={"var(--dark-gray)"}
+                color={"var(--foregroung-color)"}
+              >
+                <a href={cardData.githubLink} target="_blank" rel="noreferrer">
+                  <BsGithub size={32} />
+                </a>
+              </Tooltip>
+            </div>
+            <div className="animated-link">
+              <Tooltip
+                delay={300}
+                content="view website"
+                backgroundColor={"var(--dark-gray)"}
+                color={"var(--foregroung-color)"}
+              >
+                <a href={cardData.websiteLink} target="_blank" rel="noreferrer">
+                  <FiExternalLink size={32} />
+                </a>
+              </Tooltip>
+            </div>
           </div>
-          <div className="see-more">
-            <Link href={`/projects/${cardData.slug}`}>
-              <CgMoreO size={32} />
-            </Link>
+          <div className="see-more animated-link">
+            <Tooltip
+              delay={300}
+              content="more informations"
+              backgroundColor={"var(--dark-gray)"}
+              color={"var(--foregroung-color)"}
+            >
+              <Link href={`/projects/${cardData.slug}`}>
+                <CgMoreO size={32} />
+              </Link>
+            </Tooltip>
           </div>
         </div>
       </div>
@@ -68,15 +95,16 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          overflow: hidden;
         }
         .image-card-wrap {
+          overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
           height: 35%;
           margin: 15px;
           position: relative;
+          transition: all 0.3s;
         }
         .card-footer {
           padding: 3px 5px 10px 5px;
@@ -89,12 +117,10 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           display: flex;
           gap: 20px;
         }
-        a,
-        .see-more {
+        .animated-link {
           transition: all 0.3s ease-in-out;
         }
-        a:hover,
-        .see-more:hover {
+        .animated-link:hover {
           transform: scale(1.1);
           filter: brightness(1.15);
         }
@@ -105,20 +131,26 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           mix-blend-mode: screen;
         }
         .image-layout {
-          height: 100%;
+          position: relative;
+          max-height: 100%;
           mix-blend-mode: multiply;
           filter: grayscale(100%) contrast(1);
         }
-        .card-project-wrap:hover .image-layout {
+        .image-card-wrap:hover .image-layout {
           mix-blend-mode: normal;
           filter: none;
         }
-        img {
+        .image-card-wrap:hover {
+          overflow: visible;
+          transform: scale(1.2);
+        }
+
+        .card-content img {
           position: relative;
-          object-fit: contain;
+          object-fit: cover;
           max-height: 100%;
         }
-        @media screen and (min-width: 100px) {
+        @media screen and (min-width: 1000px) {
           .card-project-wrap {
             height: 450px;
           }

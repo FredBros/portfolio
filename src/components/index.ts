@@ -19,3 +19,4 @@ export { default as TitleSection } from "./ui/TitleSection";
 export { default as StyledImage } from "./ui/StyledImage";
 export { default as CardProject } from "./ui/CardProject";
 export { default as TechList } from "./ui/TechList";
+export { default as Tooltip } from "./ui/Tooltip";

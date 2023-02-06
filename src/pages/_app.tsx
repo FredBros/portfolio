@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import "@/styles/tooltip.css";
 import type { AppProps } from 'next/app'
 import { Layout } from "@/components";
 import {MyContextProvider} from "@/context/MyContex";
