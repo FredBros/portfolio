@@ -8,11 +8,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className="layout">
-        <Header/>
+        <Header />
         <main>
           <div className="navbar-wrap">
             <div className="close-navbar" onClick={toggleMenu}></div>
-            <Navbar isOpen={isMenuOpen} />
+            <Navbar isOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </div>
           <div className="page">{children}</div>
         </main>

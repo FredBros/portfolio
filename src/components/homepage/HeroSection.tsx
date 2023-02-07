@@ -12,7 +12,7 @@ const HeroSection = ({ data }: Props) => {
     <>
       <SectionContainer isBordered={false}>
         <VerticalSection>
-          <div className="hero-section">
+          <div className="hero-section" id="home">
             <div className="hi firacode">Hi, my name is</div>
             <Title>
               <span className="initial">F</span>red{" "}

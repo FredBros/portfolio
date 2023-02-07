@@ -4,13 +4,26 @@ import { menuItems } from "../../utils/menuItems";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import MenuButton from "./MenuButton";
-
+import {  scroller } from "react-scroll/modules";
+import { useRouter } from "next/router";
 
 type Props = {
   isOpen: boolean;
+  toggleMenu: () => void
 };
 
-const Navbar = ({ isOpen }: Props) => {
+const Navbar = ({ isOpen, toggleMenu }: Props) => {
+  const router = useRouter();
+  const scrollTarget = (target: string) =>
+    scroller.scrollTo(target, { smooth: true, duration: 400, delay: 0 });
+
+  const scrollToPage = async (target: string) => {
+    if (router.pathname !== "/") {
+      await router.push("/");
+    }
+    toggleMenu();
+    scrollTarget(target);
+  };
   return (
     <>
       <div className="navbar">
@@ -20,9 +33,9 @@ const Navbar = ({ isOpen }: Props) => {
         <div className="menu firacode">
           {menuItems.map((item, index) => {
             return (
-              <Link href={item.link} key={index}>
+              <div onClick={() => scrollToPage(item.link)} key={index}>
                 <span className="menu-item">{item.name}</span>
-              </Link>
+              </div>
             );
           })}
         </div>
@@ -80,9 +93,8 @@ const Navbar = ({ isOpen }: Props) => {
           gap: 20px;
         }
         .menu-item {
+          cursor: pointer;
           padding: 15px;
-        }
-        .menu-item {
           display: inline-block;
           position: relative;
           transition: transform 0.3s ease-in-out;

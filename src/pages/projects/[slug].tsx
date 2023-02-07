@@ -10,7 +10,6 @@ type Props = {
 };
 
 const Project = ({data}:Props) => {
-console.log(data);
   return (
     <>
       <SectionContainer isBordered={false}>
@@ -26,7 +25,7 @@ console.log(data);
             <div className="description-wrap">
               <RichText content={data.description.raw} />
             </div>
-            <TechList data={data.techno} color={"var(--green)"} />
+            <TechList data={data.techno} color={"var(--green)"} gap={15}/>
             <div className="links-wrap">
               <ExtLinksProject
                 githubLink={data.githubLink}
@@ -67,7 +66,9 @@ export const getStaticProps:GetStaticProps = async  ({params})=> {
 export async function getStaticPaths() {
   const data = await getSlugs();
   return {
-    paths: data.map((project:{slug:string}) => ({ params: { slug :project.slug } })),
-    fallback: true,
+    paths: data.map((project: { slug: string }) => ({
+      params: { slug: project.slug },
+    })),
+    fallback: false,
   };
 }

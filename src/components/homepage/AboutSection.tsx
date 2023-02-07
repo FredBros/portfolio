@@ -10,7 +10,7 @@ const AboutSection = ({data}:Props) => {
     <>
       <SectionContainer>
         <VerticalSection>
-          <div className="about-wrap">
+          <div className="about-wrap" id="about">
             <TitleSection>{data.title}</TitleSection>
             <div className="description">
               <RichText content={data.description.raw} />
@@ -24,7 +24,7 @@ const AboutSection = ({data}:Props) => {
       <style jsx>{`
         .description {
           max-width: 75ch;
-          margin: 40px 0 80px 0;
+          margin: 0px 0 80px 0;
         }
         .portrait-wrap {
           max-width: 300px;

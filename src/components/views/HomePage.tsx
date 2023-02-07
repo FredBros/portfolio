@@ -7,13 +7,13 @@ type Props = {
 };
 
 const HomePage = ({ data }: Props) => {
-  const { heroes, abouts, projectsSections, projects, contacts } = data;
+  const { heroes, abouts, projectsSections, projects, contacts, resumes } = data;
   return (
     <>
       <HeroSection data={heroes[0]} />
       <AboutSection data={abouts[0]} />
       <ProjectsSection data={projectsSections[0]} cardsData={projects} />
-      <ContactSection data={contacts[0]} />
+      <ContactSection data={contacts[0]} resumeData={resumes[0]}/>
     </>
   );
 };

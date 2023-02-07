@@ -16,12 +16,12 @@ const ProjectsSection = ({data, cardsData}:Props) => {
     <>
       <SectionContainer>
         <VerticalSection>
-          <div className="projects-wrap">
+          <div className="projects-wrap" id="projects">
             <TitleSection>{capitalize(data.title)}</TitleSection>
             <div className="description">
               <p>{data.description}</p>
             </div>
-            <TechList data={data.technos} gap={20}/>
+            <TechList data={data.technos} gap={20} />
             <div className="carousel">
               <ProjectsCarousel cardsData={cardsData} />
             </div>
@@ -39,10 +39,10 @@ const ProjectsSection = ({data, cardsData}:Props) => {
         </VerticalSection>
       </SectionContainer>
       <style jsx>{`
-        .description{
+        .description {
           margin-bottom: 20px;
         }
-         .carousel {
+        .carousel {
           display: block;
         }
         .projects-list {

@@ -12,6 +12,7 @@ export { default as AboutSection } from "./homepage/AboutSection";
 export { default as ProjectsSection } from "./homepage/ProjectsSection";
 export { default as ProjectsCarousel } from "./homepage/ProjectsCarousel";
 export { default as ContactSection } from "./homepage/ContactSection";
+export { default as ResumeSection } from "./homepage/ResumeSection";
 
 export { default as ImagesCarousel } from "./projectpage/ImagesCarousel";
 

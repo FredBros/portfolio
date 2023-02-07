@@ -26,7 +26,7 @@ const TechList = ({data, color, gap }:Props) => {
           font-weight: 100;
           letter-spacing: 0.03rem;
           color: ${color || "inherit"};
-          gap:${gap+"px" ||"5px"};
+          gap:${gap ||5}px;
         }
         li {
           display: flex;

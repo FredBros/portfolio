@@ -88,10 +88,23 @@ type ContactData = {
 }
 type ContactsData = ContactData[]
 
+type ResumeData = {
+  title: string;
+  subtitle?: string;
+  urlInline: string;
+  urlMobile?: string;
+  pdf:{
+    url:string;
+  }
+};
+
+type ResumesData = ResumeData[]
+
 export type HomePageData = {
   heroes: HeroesData;
   abouts: AboutsData;
   projectsSections: ProjectsSectionsData;
   projects: CardsProjectData;
   contacts: ContactsData
+  resumes: ResumesData
 };

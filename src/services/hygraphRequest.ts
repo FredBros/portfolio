@@ -58,6 +58,15 @@ export const getHomePageData = async () => {
         subtitle
         title
       }
+      resumes(first: 1, orderBy: publishedAt_DESC) {
+        title
+        subtitle
+        urlInline
+        urlMobile
+        pdf {
+          url
+        }
+      }
     }
   `;
   const result = await request(graphqlAPI, query);

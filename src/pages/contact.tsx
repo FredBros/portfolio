@@ -7,7 +7,6 @@ type Props={
   data: ContactsData
 }
 const contact = ({data}:Props) => {
-console.log(data[0])
   return (
     <>
     <ContactPage data={data[0]}/>
