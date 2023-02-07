@@ -39,10 +39,11 @@ export type AboutData = {
 
 type AboutsData = AboutData[];
 
-type ProjectsSectionData= {
+type ProjectsSectionData = {
   description: string;
   title: string;
-}
+  technos:[string];
+};
 type ProjectsSectionsData = ProjectsSectionData[];
 
 type CardProjectData = {

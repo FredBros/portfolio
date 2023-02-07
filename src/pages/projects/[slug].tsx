@@ -26,9 +26,7 @@ console.log(data);
             <div className="description-wrap">
               <RichText content={data.description.raw} />
             </div>
-            <div className="techlist-wrap">
-              <TechList data={data.techno} />
-            </div>
+            <TechList data={data.techno} color={"var(--green)"} />
             <div className="links-wrap">
               <ExtLinksProject
                 githubLink={data.githubLink}
@@ -50,9 +48,6 @@ console.log(data);
         }
         .description {
           max-width: 75ch;
-        }
-        .techlist-wrap {
-          color: var(--green);
         }
       `}</style>
     </>

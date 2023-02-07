@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleSection, SectionContainer, VerticalSection, ProjectsCarousel, CardProject } from "../";
+import { TitleSection, SectionContainer, VerticalSection, ProjectsCarousel, CardProject, TechList } from "../";
 import {CardsProjectData, ProjectsSectionData} from "../../types/data"
 import { capitalize } from '@/utils/capitalize';
 
@@ -21,6 +21,7 @@ const ProjectsSection = ({data, cardsData}:Props) => {
             <div className="description">
               <p>{data.description}</p>
             </div>
+            <TechList data={data.technos} gap={20}/>
             <div className="carousel">
               <ProjectsCarousel cardsData={cardsData} />
             </div>
@@ -38,7 +39,10 @@ const ProjectsSection = ({data, cardsData}:Props) => {
         </VerticalSection>
       </SectionContainer>
       <style jsx>{`
-        .carousel {
+        .description{
+          margin-bottom: 20px;
+        }
+         .carousel {
           display: block;
         }
         .projects-list {
@@ -56,7 +60,6 @@ const ProjectsSection = ({data, cardsData}:Props) => {
             grid-row-gap: 80px;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
-            
           }
         }
       `}</style>

@@ -44,6 +44,7 @@ const ImagesCarousel = ({images}:Props) => {
                 fill
                 alt={"Project image"}
                 style={{ objectFit: "contain" }}
+                priority={true}
               />
             </div>
           );

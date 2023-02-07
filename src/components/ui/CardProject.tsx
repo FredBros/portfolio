@@ -28,43 +28,8 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           </div>
         </div>
         <div className="card-footer">
-          <TechList data={cardData.techno} />
+          <TechList data={cardData.techno} color={"var(--green)"} />
           <div className="links-wrap">
-            {/* <div className="external-links">
-              <div className="animated-link">
-                <Tooltip
-                  direction={"right"}
-                  delay={300}
-                  content="view repository"
-                  backgroundColor={"var(--dark-gray)"}
-                  color={"var(--foreground-color)"}
-                >
-                  <a
-                    href={cardData.githubLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <BsGithub size={32} />
-                  </a>
-                </Tooltip>
-              </div>
-              <div className="animated-link">
-                <Tooltip
-                  delay={300}
-                  content="view website"
-                  backgroundColor={"var(--dark-gray)"}
-                  color={"var(--foreground-color)"}
-                >
-                  <a
-                    href={cardData.websiteLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FiExternalLink size={32} />
-                  </a>
-                </Tooltip>
-              </div>
-            </div> */}
             <ExtLinksProject githubLink={cardData.githubLink} websiteLink={cardData.websiteLink}/>
             <div className="see-more animated-link">
               <Tooltip
@@ -86,7 +51,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         .card-project-wrap {
           margin: 10px;
           border: 1px solid var(--green);
-          height: 350px;
+          height: 380px;
         }
         .large-screen {
           grid-column: ${isEven ? "1 / 2" : "2 / 3"};
@@ -101,7 +66,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           padding: 0 5px 0 10px;
         }
         .card-content {
-          padding: 0 10px 80px;
+          padding: 0 10px 85px;
           position: relative;
           padding-top: 15px;
           height: 100%;

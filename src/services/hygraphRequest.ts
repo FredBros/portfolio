@@ -33,6 +33,7 @@ export const getHomePageData = async () => {
       projectsSections(orderBy: publishedAt_ASC, first: 1) {
         description
         title
+        technos
       }
       projects(orderBy: updatedAt_ASC) {
         cardImage {
