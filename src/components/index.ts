@@ -13,6 +13,8 @@ export { default as ProjectsSection } from "./homepage/ProjectsSection";
 export { default as ProjectsCarousel } from "./homepage/ProjectsCarousel";
 export { default as ContactSection } from "./homepage/ContactSection";
 
+export { default as ImagesCarousel } from "./projectpage/ImagesCarousel";
+
 export { default as Title } from "./ui/Title";
 export { default as SectionContainer } from "./ui/SectionContainer";
 export { default as ContactButton } from "./ui/ContactButton";
@@ -24,3 +26,4 @@ export { default as TechList } from "./ui/TechList";
 export { default as Tooltip } from "./ui/Tooltip";
 export { default as MailButton } from "./ui/MailButton";
 export { default as ContactContent } from "./ui/ContactContent";
+export { default as ExtLinksProject } from "./ui/ExtLinksProject";

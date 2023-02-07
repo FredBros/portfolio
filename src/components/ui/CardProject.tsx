@@ -1,5 +1,5 @@
 import React from "react";
-import { TechList, Tooltip } from "../";
+import { TechList, Tooltip, ExtLinksProject} from "../";
 import { CardProjectData } from "../../types/data";
 import { CgMoreO } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
@@ -30,7 +30,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         <div className="card-footer">
           <TechList data={cardData.techno} />
           <div className="links-wrap">
-            <div className="external-links">
+            {/* <div className="external-links">
               <div className="animated-link">
                 <Tooltip
                   direction={"right"}
@@ -64,7 +64,8 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
                   </a>
                 </Tooltip>
               </div>
-            </div>
+            </div> */}
+            <ExtLinksProject githubLink={cardData.githubLink} websiteLink={cardData.websiteLink}/>
             <div className="see-more animated-link">
               <Tooltip
                 delay={300}
@@ -133,12 +134,6 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           justify-content: space-between;
           transition: all 0.3s ease-in-out;
         }
-        .external-links {
-          position: relative;
-          display: flex;
-          gap: 20px;
-        }
-
         a {
           position: relative;
           z-index: 0;
@@ -169,7 +164,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         .image-card-wrap:hover {
           z-index: 2;
           overflow: visible;
-          transform: scale(1.2);
+          {/* transform: scale(1.2); */}
         }
 
         .card-content img {
@@ -180,8 +175,6 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         @media screen and (min-width: 1000px) {
           .card-project-wrap {
             height: 450px;
-          }
-          .image-card-wrap {
           }
         }
       `}</style>

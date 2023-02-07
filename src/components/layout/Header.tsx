@@ -10,7 +10,7 @@ const Header = () => {
     <>
       <div className="header-wrap">
         <div className="brand">
-          <Link href="./">
+          <Link href="/">
             <h3 className="firacode">FredBrowww.</h3>
           </Link>
         </div>

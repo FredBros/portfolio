@@ -27,8 +27,8 @@ const ContactContent = ({ data }: Props) => {
           color: var(--background-color);
           padding: 10px;
         }
-        h2{
-            font-size: clamp(2.88rem, 4.26rem + -4.416vw, 1.5rem);
+        h2 {
+          font-size: clamp(2.88rem, 4.26rem + -4.416vw, 1.5rem);
         }
         .button-wrap {
           margin: 50px auto 0 auto;
@@ -36,7 +36,6 @@ const ContactContent = ({ data }: Props) => {
         @media screen and (min-width: 1000px) {
           .contact-content {
             padding: 50px;
-            font-size=
           }
         }
       `}</style>

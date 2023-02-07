@@ -58,8 +58,24 @@ type CardProjectData = {
   techno:[string];
   websiteLink: string;
 };
-
 type CardsProjectData = CardProjectData[]
+
+type ImagesProject = [
+     { height: number;
+      url: string;
+      width: number;}
+  ];
+
+
+type ProjectDetails = CardProjectData &{
+  images: ImagesProject
+  description: {
+    raw: {
+      children: ElementNode[];
+    };
+  };
+};
+
 
 type ContactData = {
   email: string;

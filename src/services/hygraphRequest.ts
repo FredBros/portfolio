@@ -77,6 +77,40 @@ export const GetContactData = async () => {
     }
   `;
   const result = await request(graphqlAPI, query);
-  console.log(result.contacts)
   return result.contacts;
+};
+
+export const getSlugs = async () => {
+  const query = gql`
+    query getSlugs {
+      projects {
+        slug
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+ return result.projects;
+};
+
+export const getProjectDetails = async (slug: string) => {
+  const query = gql`
+   query GetProjectDetails($slug : String!){
+  project(where: {slug: $slug}) {
+    description {
+      raw
+    }
+    githubLink
+    images {
+      height
+      url
+      width
+    }
+    slug
+    subtitle
+    techno
+    title
+    websiteLink
+   }}`;
+  const result = await request(graphqlAPI, query, { slug });
+  return result.project;
 };
