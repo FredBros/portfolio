@@ -1,20 +1,26 @@
 import Link from "next/link";
 import React from "react";
-import {MenuButton, ContactButton} from "../"
+import { MenuButton, ContactButton, SwitchTheme } from "../";
+import { useTheme } from "next-themes";
+
 
 
 
 
 const Header = () => {
+
+    const { theme, setTheme } = useTheme();
+
   return (
     <>
       <div className="header-wrap">
         <div className="brand">
           <Link href="/">
-            <h3 className="firacode">FredBrowww.</h3>
+            <h3 className={theme==="light" ? '' : "firacode"}>FredBrowww.</h3>
           </Link>
         </div>
         <div className="right-side">
+          <SwitchTheme/>
           <div className="menu-btn-wrap">
             <MenuButton />
           </div>

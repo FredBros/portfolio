@@ -1,28 +1,33 @@
 import React from "react";
 import { HeroData } from "@/types/data";
 import { Title, SectionContainer, VerticalSection, StyledImage } from "..";
-import Image from "next/image";
+import { useTheme } from "next-themes";
+
 
 type Props = {
   data: HeroData;
 };
 
 const HeroSection = ({ data }: Props) => {
+    const { theme, setTheme } = useTheme();
+
   return (
     <>
       <SectionContainer isBordered={false}>
         <VerticalSection>
           <div className="hero-section" id="home">
-            <div className="hi firacode">Hi, my name is</div>
-            <Title>
+            <div className="hi">Hi, my name is</div>
+            <Title theme={theme!}>
               <span className="initial">F</span>red{" "}
               <span className="initial">B</span>
               rossard
             </Title>
-            <Title color={"var(--middle-gray)"}>{data.subtitle}</Title>
+            <Title color={"var(--middle-gray)"} theme={theme!}>
+              {data.subtitle}
+            </Title>
             <p>{data.paragraph}</p>
             <div className="image-wrap">
-              <StyledImage url={data.picture.url} />
+              <StyledImage url={data.picture.url}/>
             </div>
           </div>
         </VerticalSection>
@@ -35,6 +40,9 @@ const HeroSection = ({ data }: Props) => {
           justify-content: center;
         }
         .hi {
+          font-family: ${theme === "light"
+            ? "inherit"
+            : "'Fira Code', monospace"};
           color: var(--green);
           font-size: 1.125rem;
           margin-bottom: 20px;

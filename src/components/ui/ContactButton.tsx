@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import React from 'react'
+import { useTheme } from "next-themes";
+
 
 const ContactButton = () => {
+    const { theme, setTheme } = useTheme();
   return (
     <>
       <Link href="/contact">
