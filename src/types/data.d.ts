@@ -9,6 +9,7 @@ export type DataContextType ={
 
 
 export type HeroData = {
+  portraitLight: any;
   title: string;
   subtitle: string;
   paragraph: string

@@ -15,6 +15,11 @@ export const getHomePageData = async () => {
           )
           width
         }
+        portraitLight {
+          url
+          width
+          height
+        }
         title
       }
       abouts(orderBy: publishedAt_ASC, first: 1) {

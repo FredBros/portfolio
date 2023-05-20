@@ -22,12 +22,32 @@ const HeroSection = ({ data }: Props) => {
               <span className="initial">B</span>
               rossard
             </Title>
-            <Title color={"var(--middle-gray)"} theme={theme!}>
+            <div
+              className="subtitle-dark"
+              style={{ display: theme != "dark" ? "none" : "block" }}
+            >
+              <Title color={"var(--middle-gray)"} theme={theme!}>
+                {data.subtitle}
+              </Title>
+            </div>
+            <div
+              className="subtitle-light"
+              style={{ display: theme != "light" ? "none" : "inline-block" }}
+            >
               {data.subtitle}
-            </Title>
+            </div>
             <p>{data.paragraph}</p>
-            <div className="image-wrap">
-              <StyledImage url={data.picture.url}/>
+            <div
+              className="image-wrap"
+              style={{ display: theme != "dark" ? "none" : "block" }}
+            >
+              <StyledImage url={data.picture.url} />
+            </div>
+            <div
+              className="image-wrap"
+              style={{ display: theme === "light" ? "block" : "none" }}
+            >
+              <img src={data.portraitLight.url} alt="portrait" />
             </div>
           </div>
         </VerticalSection>
@@ -53,51 +73,20 @@ const HeroSection = ({ data }: Props) => {
         p {
           margin: 40px 0;
         }
+        .subtitle-light {
+          font-size: clamp(0.875rem, 0.3043rem + 2.6087vw, 2.75rem);
+          font-weight: 900;
+          background-color: #ffc700;
+          border: 2px solid #000;
+          margin: 10px auto 0 0;
+          padding: 5px;
+        }
         .image-wrap {
           max-width: 300px;
           max-height: 300px;
           height: 60vw;
           width: 60vw;
           margin: 40px auto 50px auto;
-        }
-
-        .portrait-wrap::after {
-          z-index: -1;
-          position: absolute;
-          content: "";
-          height: 100%;
-          width: 100%;
-          top: 0;
-          transform: translate(15%, 15%);
-          border: 1px solid var(--green);
-          transition: all 0.3s ease-in-out;
-        }
-        .portrait-wrap::before {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0px;
-          left: 0px;
-          mix-blend-mode: screen;
-        }
-        .portrait {
-          height: 100%;
-          width: 100%;
-          mix-blend-mode: multiply;
-          filter: grayscale(100%) contrast(1);
-          position: relative;
-        }
-        .portrait-wrap:hover .portrait {
-          mix-blend-mode: normal;
-          filter: none;
-        }
-        .portrait-wrap:hover {
-          background-color: var(--light-gray);
-        }
-        .portrait-wrap:hover::after {
-          transform: translate(10%, 10%);
         }
       `}</style>
     </>

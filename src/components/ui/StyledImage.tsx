@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "next-themes";
 
 type Props = {
   url: string;
@@ -13,7 +12,6 @@ const StyledImage = ({
   alt = "Portrait de Fred Brossard",
   objectFit = "cover",
 }: Props) => {
-   const { theme, setTheme } = useTheme();
 
   return (
     <>
@@ -25,13 +23,13 @@ const StyledImage = ({
       <style jsx>{`
         .image-wrap {
           position: relative;
-          background-color: ${theme === "dark" ? "var(--green)" : "#746BEB"};
+          background-color: var(--green) ;
           height: 100%;
           width: 100%;
           transition: all 0.3s ease-in-out;
         }
         .image-wrap::after {
-          display: ${bordered && theme === "dark" ? "block" : "none"};
+          display: block;
           z-index: -1;
           position: absolute;
           content: "";
@@ -44,7 +42,7 @@ const StyledImage = ({
         }
         .image-wrap::before {
           content: "";
-          display: ${theme === "dark" ? "block" : "none"};
+          display: block;
           position: absolute;
           width: 100%;
           height: 100%;
@@ -59,17 +57,15 @@ const StyledImage = ({
           height: 100%;
           position: relative;
           overflow: hidden;
-          mix-blend-mode: ${theme === "dark" ? "multiply" : "none"};
-          filter: ${theme === "dark" ? "grayscale(100%) contrast(1)" : "none"};
+          mix-blend-mode:multiply;
+          filter: grayscale(100%) contrast(1);
         }
         .image-wrap:hover .image {
           mix-blend-mode: normal;
           filter: none;
         }
         .image-wrap:hover {
-          background-color: ${theme === "dark"
-            ? "var(--light-gray)"
-            : "#DD7DFF"};
+          background-color: var(--light-gray);
         }
         .image-wrap:hover::after {
           transform: translate(10%, 10%);

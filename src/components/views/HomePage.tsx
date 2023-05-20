@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from "react";
 import { HomePageData } from "@/types/data";
 import { HeroSection, AboutSection, ProjectsSection, ContactSection } from "../";
 
@@ -7,7 +7,15 @@ type Props = {
 };
 
 const HomePage = ({ data }: Props) => {
+  const [mounted, setMounted] = useState(false);
   const { heroes, abouts, projectsSections, projects, contacts, resumes } = data;
+   useEffect(() => {
+     setMounted(true);
+   }, []);
+
+   if (!mounted) {
+     return null;
+   }
   return (
     <>
       <HeroSection data={heroes[0]} />
