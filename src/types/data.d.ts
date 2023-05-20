@@ -25,6 +25,7 @@ type HeroesData = HeroData[];
 
 
 export type AboutData = {
+  portraitLight: any;
   title: string;
   description: {
     raw: {

@@ -31,6 +31,11 @@ export const getHomePageData = async () => {
           )
           width
         }
+        portraitLight {
+          height
+          url
+          width
+        }
         description {
           raw
         }
