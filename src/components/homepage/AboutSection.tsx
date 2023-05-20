@@ -44,7 +44,7 @@ const AboutSection = ({data}:Props) => {
       <style jsx>{`
         .about-wrap {
           ${theme === "light" &&
-          "border: solid 2px #000; border-radius : 20px; background-color: #22A094; padding: 10px"}
+          "border: solid 2px #000; background-color: #22A094; padding: 10px"}
         }
         .description {
           max-width: 75ch;

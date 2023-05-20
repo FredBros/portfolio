@@ -5,6 +5,8 @@ import { CgMoreO } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+
 
 
 
@@ -14,12 +16,21 @@ type Props = {
   isLargeScreen?: boolean;
 };
 
-const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
+const CardProject = ({ cardData, isEven, isLargeScreen = false}: Props) => {
+      const { theme, setTheme } = useTheme();
+
   return (
-    <div className={`card-project-wrap ${isLargeScreen ? "large-screen" : ""}`}>
-      <h3 className="firacode card-title">{cardData.title}</h3>
+    <div
+      className={`card-project-wrap ${isLargeScreen ? "large-screen" : ""} ${
+        theme === "dark" ? "card-project-wrap-dark" : "card-project-wrap-light"
+      }`}
+    >
+      <h3 className={theme === "dark" ? "card-title-dark" : "card-title-light"}>
+        {cardData.title}
+      </h3>
       <div className="card-content">
         <p>{cardData.subtitle}</p>
+        <TechList data={cardData.techno} color={"var(--green)"} />
         <div className="image-card-wrap">
           <div className="styled-image-wrap">
             <div className="image-layout">
@@ -28,15 +39,20 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           </div>
         </div>
         <div className="card-footer">
-          <TechList data={cardData.techno} color={"var(--green)"} />
           <div className="links-wrap">
-            <ExtLinksProject githubLink={cardData.githubLink} websiteLink={cardData.websiteLink}/>
+            <ExtLinksProject
+              githubLink={cardData.githubLink}
+              websiteLink={cardData.websiteLink}
+              theme={theme}
+            />
             <div className="see-more animated-link">
               <Tooltip
                 delay={300}
                 direction={"left"}
                 content="more informations"
-                backgroundColor={"var(--dark-gray)"}
+                backgroundColor={`${
+                  theme === "dark" ? "var(--dark-gray)" : "#DD7DFF"
+                }`}
                 color={"var(--foreground-color)"}
               >
                 <Link href={`/projects/${cardData.slug}`}>
@@ -50,14 +66,32 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
       <style jsx>{`
         .card-project-wrap {
           margin: 10px;
-          border: 1px solid var(--green);
+
           height: 380px;
+        }
+        .card-project-wrap-dark {
+          border: 1px solid var(--green);
+        }
+        .card-project-wrap-light {
+          background-color: #fff;
+          display: flex;
+          flex-direction: column;
+          border: 2px solid #000;
+          border-radius: 15px;
+          box-shadow: 5px 5px 0px #000;
+          transition: all 0.3s ease-out;
+          padding: 5px;
+        }
+        .card-project-wrap-light:hover {
+          box-shadow: 15px 15px 0px #000;
+          transform: translate(-10px, -10px);
         }
         .large-screen {
           grid-column: ${isEven ? "1 / 2" : "2 / 3"};
           transform: ${isEven ? "translateY(-80%)" : ""};
         }
-        .card-title {
+        .card-title-dark {
+          font-family: "Fira Code", monospace;
           position: absolute;
           display: inline-block;
           background-color: var(--background-color);
@@ -66,14 +100,17 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           padding: 0 5px 0 10px;
         }
         .card-content {
-          padding: 0 10px 85px;
+          padding: 0 10px 55px;
           position: relative;
           padding-top: 15px;
-          height: 100%;
+          height: ${theme === "dark" ? "100%" : "95%"};
           max-height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
+        }
+        .card-content p {
+          font-size: 14px;
         }
         .image-card-wrap {
           overflow: hidden;
@@ -83,6 +120,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
           margin: 10px 10px 2px 10px;
           position: relative;
           transition: all 0.3s;
+          border: ${theme === "dark" ? "none" : "2px solid #000"};
         }
         .card-footer {
           color: var(--foreground-color);
@@ -113,23 +151,18 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false }: Props) => {
         .styled-image-wrap {
           display: block;
           height: 100%;
-          background-color: var(--green);
-          mix-blend-mode: screen;
+          background-color: ${theme === "dark" ? "var(--green)" : "none"};
+          mix-blend-mode: ${theme === "dark" ? "screen" : "normal"};
         }
         .image-layout {
           position: relative;
           max-height: 100%;
-          mix-blend-mode: multiply;
-          filter: grayscale(100%) contrast(1);
+          mix-blend-mode: ${theme === "dark" ? "multiply" : "normal"};
+          filter: ${theme === "dark" ? "grayscale(100%) contrast(1)" : "none"};
         }
         .image-card-wrap:hover .image-layout {
           mix-blend-mode: normal;
           filter: none;
-        }
-        .image-card-wrap:hover {
-          z-index: 2;
-          overflow: visible;
-          {/* transform: scale(1.2); */}
         }
 
         .card-content img {

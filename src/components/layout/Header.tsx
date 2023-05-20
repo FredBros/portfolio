@@ -16,11 +16,11 @@ const Header = () => {
       <div className="header-wrap">
         <div className="brand">
           <Link href="/">
-            <h3 className={theme==="light" ? '' : "firacode"}>FredBrowww.</h3>
+            <h3>FredBrowww.</h3>
           </Link>
         </div>
         <div className="right-side">
-          <SwitchTheme/>
+          <SwitchTheme />
           <div className="menu-btn-wrap">
             <MenuButton />
           </div>
@@ -47,6 +47,9 @@ const Header = () => {
           filter: brightness(1.15);
         }
         h3 {
+          font-family: ${theme === "dark"
+            ? "'Fira Code', monospace"
+            : "inherit"};
           color: var(--green);
           padding: 15px;
         }

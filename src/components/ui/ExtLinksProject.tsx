@@ -6,9 +6,10 @@ import { Tooltip } from "../";
 type Props = {
   githubLink: string;
   websiteLink:string;
+  theme: string | undefined
 };
 
-const ExtLinksProject = ({ githubLink, websiteLink }:Props) => {
+const ExtLinksProject = ({ githubLink, websiteLink, theme }:Props) => {
   return (
     <>
       <div className="external-links">
@@ -17,7 +18,9 @@ const ExtLinksProject = ({ githubLink, websiteLink }:Props) => {
             direction={"right"}
             delay={300}
             content="view repository"
-            backgroundColor={"var(--dark-gray)"}
+            backgroundColor={`${
+              theme === "dark" ? "var(--dark-gray)" : "#DD7DFF"
+            }`}
             color={"var(--foreground-color)"}
           >
             <a href={githubLink} target="_blank" rel="noreferrer">
@@ -29,7 +32,9 @@ const ExtLinksProject = ({ githubLink, websiteLink }:Props) => {
           <Tooltip
             delay={300}
             content="view website"
-            backgroundColor={"var(--dark-gray)"}
+            backgroundColor={`${
+              theme === "dark" ? "var(--dark-gray)" : "#DD7DFF"
+            }`}
             color={"var(--foreground-color)"}
           >
             <a href={websiteLink} target="_blank" rel="noreferrer">

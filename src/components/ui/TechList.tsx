@@ -1,5 +1,7 @@
 import React from 'react'
 import { BiCaretRight} from "react-icons/bi"
+import { useTheme } from "next-themes";
+
 
 type Props = {
     data: [string]
@@ -7,12 +9,14 @@ type Props = {
     gap?:number
 }
 
-const TechList = ({data, color, gap }:Props) => {
+const TechList = ({data, color, gap}:Props) => {
+    const { theme, setTheme } = useTheme();
+
   return (
     <ul className="tech-list">
       {data.map((tech, index) => (
-        <li className="firacode" key={index}>
-          <BiCaretRight />
+        <li className={theme != "dark" ? "light-list" : ""} key={index}>
+          {theme === "dark" ? <BiCaretRight /> : null}
           {tech}
         </li>
       ))}
@@ -26,11 +30,21 @@ const TechList = ({data, color, gap }:Props) => {
           font-weight: 100;
           letter-spacing: 0.03rem;
           color: ${color || "inherit"};
-          gap:${gap ||5}px;
+          gap:${gap || 5}px;
         }
         li {
+          font-family: ${
+            theme === "dark" ? "'Fira Code', monospace" : "inherit"
+          };
           display: flex;
-          align-items: center;
+          align-items: center;          
+        }
+        .light-list{
+          border: solid 1px #000;
+          border-radius : 100px;
+          padding: 5px;
+          background-color: #fff;
+          font-weight: 600;
         }
       `}</style>
     </ul>

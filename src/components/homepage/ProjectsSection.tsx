@@ -2,6 +2,8 @@ import React from 'react'
 import { TitleSection, SectionContainer, VerticalSection, ProjectsCarousel, CardProject, TechList } from "../";
 import {CardsProjectData, ProjectsSectionData} from "../../types/data"
 import { capitalize } from '@/utils/capitalize';
+import { useTheme } from "next-themes";
+
 
 type Props = {
   data: ProjectsSectionData;
@@ -12,16 +14,20 @@ type Props = {
 const isEven=(value:number)=>(value + 1) % 2 === 0;
 
 const ProjectsSection = ({data, cardsData}:Props) => {
+        const { theme, setTheme } = useTheme();
+
   return (
     <>
-      <SectionContainer>
+      <SectionContainer theme={theme}>
         <VerticalSection>
           <div className="projects-wrap" id="projects">
-            <TitleSection>{capitalize(data.title)}</TitleSection>
+            <TitleSection theme={theme} color={"#00FF75"}>
+              {capitalize(data.title)}
+            </TitleSection>
             <div className="description">
               <p>{data.description}</p>
             </div>
-            <TechList data={data.technos} gap={20} />
+            <TechList data={data.technos} gap={theme==="light" ? 5: 20} />
             <div className="carousel">
               <ProjectsCarousel cardsData={cardsData} />
             </div>
@@ -39,6 +45,10 @@ const ProjectsSection = ({data, cardsData}:Props) => {
         </VerticalSection>
       </SectionContainer>
       <style jsx>{`
+        .projects-wrap {
+          ${theme === "light" &&
+          "border: solid 2px #000; background-color: #9BAFEE; padding: 10px"}
+        }
         .description {
           margin-bottom: 20px;
         }

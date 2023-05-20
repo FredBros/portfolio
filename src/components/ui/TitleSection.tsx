@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TitleSection = ({ children, theme, color }: { children: React.ReactNode, theme: string | undefined , color: string | undefined}) => {
+const TitleSection = ({ children, theme, color }: { children: React.ReactNode | string, theme: string | undefined , color: string | undefined}) => {
   return (
     <h2
       className={
