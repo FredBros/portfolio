@@ -68,7 +68,7 @@ const ResumeSection = ({ data }: Props) => {
           flex-direction: column;
           gap: 20px;
             ${theme === "light" &&
-            "border: solid 2px #000; background-color: #DD7DFF; padding: 10px"}
+            "border: solid 2px #000; background-color: #DD7DFF; padding: 10px 10px 30px 10px"}
           
         }
         .resume-link-list {

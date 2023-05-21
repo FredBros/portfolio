@@ -4,7 +4,7 @@ const TitleSection = ({ children, theme, color }: { children: React.ReactNode | 
   return (
     <h2
       className={
-        theme === "dark" ? "title-section-dark" : "title-section-light"
+        theme === "dark" ? "title-section-dark" : "title-section-light title-light"
       }
     >
       {children}

@@ -36,7 +36,7 @@ const HeroSection = ({ data }: Props) => {
             >
               {data.subtitle}
             </div>
-            <p>{data.paragraph}</p>
+            <p className={theme != "dark" ? "p-light" : ""}>{data.paragraph}</p>
             <div
               className="image-wrap"
               style={{ display: theme != "dark" ? "none" : "block" }}
@@ -64,7 +64,9 @@ const HeroSection = ({ data }: Props) => {
             ? "inherit"
             : "'Fira Code', monospace"};
           color: var(--green);
-          font-size: 1.125rem;
+          font-size: ${theme != "light"
+            ? "1.125rem"
+            : "clamp(1.125rem, 0.3381rem + 1.6393vw, 1.875rem)"};
           margin-bottom: 20px;
         }
         .initial {

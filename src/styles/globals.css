@@ -93,3 +93,9 @@ li, ul {
 .react-multi-carousel-dot--active button {
     background: var(--neon-green) !important;
 }
+.p-light{
+  font-size: clamp(1rem, 0.4754rem + 1.0929vw, 1.5rem) !important;
+}
+.title-light{
+  font-size: clamp(1.5rem, 0.4508rem + 2.1858vw, 2.5rem) !important;
+}

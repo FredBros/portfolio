@@ -15,7 +15,7 @@ const TechList = ({data, color, gap}:Props) => {
   return (
     <ul className="tech-list">
       {data.map((tech, index) => (
-        <li className={theme != "dark" ? "light-list" : ""} key={index}>
+        <li className={theme != "dark" ? "light-item" : ""} key={index}>
           {theme === "dark" ? <BiCaretRight /> : null}
           {tech}
         </li>
@@ -30,23 +30,24 @@ const TechList = ({data, color, gap}:Props) => {
           font-weight: 100;
           letter-spacing: 0.03rem;
           color: ${color || "inherit"};
-          gap:${gap || 5}px;
+          gap: ${gap || 5}px;
+          max-width: 600px;
         }
         li {
-          font-family: ${
-            theme === "dark" ? "'Fira Code', monospace" : "inherit"
-          };
+          font-family: ${theme === "dark"
+            ? "'Fira Code', monospace"
+            : "inherit"};
           display: flex;
-          align-items: center;          
+          align-items: center;
         }
-        .light-list{
+        .light-item {
           border: solid 1px #000;
-          border-radius : 100px;
+          border-radius: 100px;
           padding: 5px;
           background-color: #fff;
           font-weight: 600;
         }
-      `}</style>
+       `}</style>
     </ul>
   );
 };

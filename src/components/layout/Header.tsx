@@ -76,7 +76,11 @@ const Header = () => {
             display: none;
           }
           .contact-btn-wrap {
-            display: block;
+            display: ${theme === "dark" ? "block" : "flex"};
+            margin-left: 20px;
+            align-items: center;
+            justify-content: center;
+            padding-right: ${theme === "dark" ? "0" : "20px"};
           }
         }
       `}</style>

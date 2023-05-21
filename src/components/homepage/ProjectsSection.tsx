@@ -25,7 +25,7 @@ const ProjectsSection = ({data, cardsData}:Props) => {
               {capitalize(data.title)}
             </TitleSection>
             <div className="description">
-              <p>{data.description}</p>
+              <p className={theme != "dark" ? "p-light" : ""} >{data.description}</p>
             </div>
             <TechList data={data.technos} gap={theme === "light" ? 5 : 20} />
             <div className="carousel">

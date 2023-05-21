@@ -22,7 +22,7 @@ const AboutSection = ({data}:Props) => {
             <TitleSection theme={theme} color={"#DD7DFF"}>
               {data.title}
             </TitleSection>
-            <div className="description">
+            <div className={`description${theme!="dark" ? " p-light" : "" }`}>
               <RichText content={data.description.raw} />
             </div>
             <div

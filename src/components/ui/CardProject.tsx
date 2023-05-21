@@ -23,7 +23,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false}: Props) => {
     <div
       className={`card-project-wrap ${isLargeScreen ? "large-screen" : ""} ${
         theme === "dark" ? "card-project-wrap-dark" : "card-project-wrap-light"
-      }`}
+      } ${isEven ? "is-even" : "is-odd"}`}
     >
       <h3 className={theme === "dark" ? "card-title-dark" : "card-title-light"}>
         {cardData.title}
@@ -173,6 +173,10 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false}: Props) => {
         @media screen and (min-width: 1000px) {
           .card-project-wrap {
             height: 450px;
+          }
+          .card-project-wrap-light.is-even:hover {
+            box-shadow: 15px 15px 0px #000;
+            transform: translateX(-10px) translateY(-80%) translateY(-10px);
           }
         }
       `}</style>
