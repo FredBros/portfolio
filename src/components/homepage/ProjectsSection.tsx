@@ -18,16 +18,16 @@ const ProjectsSection = ({data, cardsData}:Props) => {
 
   return (
     <>
-      <SectionContainer theme={theme}>
+      <SectionContainer theme={theme} id={"projects"}>
         <VerticalSection>
-          <div className="projects-wrap" id="projects">
+          <div className="projects-wrap">
             <TitleSection theme={theme} color={"#00FF75"}>
               {capitalize(data.title)}
             </TitleSection>
             <div className="description">
               <p>{data.description}</p>
             </div>
-            <TechList data={data.technos} gap={theme==="light" ? 5: 20} />
+            <TechList data={data.technos} gap={theme === "light" ? 5 : 20} />
             <div className="carousel">
               <ProjectsCarousel cardsData={cardsData} />
             </div>

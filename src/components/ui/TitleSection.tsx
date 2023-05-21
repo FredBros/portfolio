@@ -28,6 +28,7 @@ const TitleSection = ({ children, theme, color }: { children: React.ReactNode | 
           background-color: ${color};
           box-shadow: 5px 5px 0px #000;
           margin-bottom: 50px;
+          margin-right: auto;
         }
       `}</style>
     </h2>

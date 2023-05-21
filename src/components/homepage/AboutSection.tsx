@@ -16,9 +16,9 @@ const AboutSection = ({data}:Props) => {
 
   return (
     <>
-      <SectionContainer theme={theme}>
+      <SectionContainer theme={theme} id={"about"}>
         <VerticalSection>
-          <div className="about-wrap" id="about">
+          <div className="about-wrap">
             <TitleSection theme={theme} color={"#DD7DFF"}>
               {data.title}
             </TitleSection>
@@ -30,14 +30,14 @@ const AboutSection = ({data}:Props) => {
               style={{ display: theme != "dark" ? "none" : "block" }}
             >
               <StyledImage url={data.portrait.url} />
-              </div>
+            </div>
 
-              <div
-                className="portrait-wrap"
-                style={{ display: theme != "light" ? "none" : "block" }}
-              >
-                <img src={data.portraitLight.url} alt="portrait" />
-              </div>
+            <div
+              className="portrait-wrap"
+              style={{ display: theme != "light" ? "none" : "block" }}
+            >
+              <img src={data.portraitLight.url} alt="portrait" />
+            </div>
           </div>
         </VerticalSection>
       </SectionContainer>

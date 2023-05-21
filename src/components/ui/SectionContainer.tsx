@@ -6,20 +6,29 @@ type Props = {
   padding?: number;
   isPage?: boolean;
   theme?: string | undefined;
+  id?: string
 };
 
-const SectionContainer = ({ isBordered=true, children, padding=20, theme="dark"}:Props) => {
+const SectionContainer = ({ isBordered=true, children, padding=20, theme="dark", id}:Props) => {
   return (
-    <section className="section-container">
-      {children}
-      <style jsx>{`
-        .section-container {
-          padding: 0 ${padding}px;
-          margin-top: 80px;
-          ${isBordered && theme==="dark" ? "border-top: solid 1px var(--green)" : ""};
-        }
-      `}</style>{" "}
-    </section>
+    <>
+      <div className="smooth-scroll-anchor" id={id}>
+        <section className="section-container">
+          {children}
+              </section>
+          <style jsx>{`
+            .smooth-scroll-anchor {
+              padding-top: 100px;
+            }
+            .section-container {
+              padding: 0 ${padding}px;              
+              ${isBordered && theme === "dark"
+                ? "border-top: solid 1px var(--green)"
+                : ""};
+            }
+          `}</style>
+      </div>
+    </>
   );
 }
 

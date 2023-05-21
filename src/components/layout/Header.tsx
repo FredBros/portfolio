@@ -43,6 +43,9 @@ const Header = () => {
           border-bottom: 1px solid var(--green);
           background: var(--background-color);
         }
+        .brand {
+          color: var(--green);
+        }
         .brand:hover {
           filter: brightness(1.15);
         }
@@ -50,7 +53,6 @@ const Header = () => {
           font-family: ${theme === "dark"
             ? "'Fira Code', monospace"
             : "inherit"};
-          color: var(--green);
           padding: 15px;
         }
         .right-side {

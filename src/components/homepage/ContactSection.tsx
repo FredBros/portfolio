@@ -7,28 +7,27 @@ import {
   ContactContent,
   ResumeSection,
 } from "../";
-import { ContactData, ResumeData  } from "../../types/data";
+import { ContactData } from "../../types/data";
+import { useTheme } from "next-themes";
+
 
 type Props = {
-    data: ContactData,
-    resumeData: ResumeData,
+    data: ContactData,   
 
 }
 
-const ContactSection = ({data, resumeData }:Props) => {
+const ContactSection = ({data}:Props) => {
+      const { theme, setTheme } = useTheme();
+
   return (
     <>
-      <SectionContainer>
-        <VerticalSection>
-          <TitleSection>{data.title}</TitleSection>
-          <ResumeSection data={resumeData} />
-        </VerticalSection>
-      </SectionContainer>
-      <SectionContainer padding={0}>
-        <div className="contact-wrap" id="contact">
+      <SectionContainer padding={0} theme={theme} id={"contact"}>
+        <div className="contact-wrap">
           <ContactContent data={data} />
         </div>
       </SectionContainer>
+      <style jsx>{`
+      `}</style>
     </>
   );
 }
