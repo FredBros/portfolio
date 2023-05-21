@@ -23,7 +23,7 @@ const ContactButton = () => {
           color: ${theme === "dark"
             ? "var(--background-color)"
             : "var(--foreground-color)"};
-          ${theme === "light"
+          ${theme != "dark"
             ? "border: 2px solid #000; box-shadow: 5px 5px 0px #000;"
             : ""}
           transition: all ease 0.3s;
