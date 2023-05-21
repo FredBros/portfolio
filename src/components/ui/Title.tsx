@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Title = ({ children, color="inherit", theme }: { children: React.ReactNode, color?:string, theme:string}) => {
+const Title = ({ children, color="inherit", theme }: { children: React.ReactNode, color?:string, theme:string | undefined}) => {
   return (
     <h1>
       {children}
