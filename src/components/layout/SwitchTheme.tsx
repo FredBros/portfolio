@@ -11,7 +11,7 @@ const SwitchTheme = () => {
   useEffect(() => {
     setMounted(true);
     setTheme("light");
-  }, []);
+  }, [setTheme]);
 
   if (!mounted) {
     return null;

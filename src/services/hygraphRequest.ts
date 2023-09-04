@@ -1,4 +1,18 @@
 import { request, gql } from "graphql-request";
+import { ContactsData, ProjectDetails } from "@/types/data";
+
+type ResultContactsData = {
+  contacts: ContactsData;
+};
+
+type ResultSlugs ={
+  projects:{
+    slug:string} []
+}
+
+type ResultProjectDetails = {
+  project: ProjectDetails;
+};
 
 const graphqlAPI: string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!;
 
@@ -83,7 +97,7 @@ export const getHomePageData = async () => {
   return result;
 };
 
-export const GetContactData = async () => {
+export const getContactData = async () => {
   const query = gql`
     query getContactData {
       contacts(first: 1, orderBy: publishedAt_DESC) {
@@ -96,7 +110,7 @@ export const GetContactData = async () => {
       }
     }
   `;
-  const result = await request(graphqlAPI, query);
+  const result: ResultContactsData = await request(graphqlAPI, query);
   return result.contacts;
 };
 
@@ -108,7 +122,7 @@ export const getSlugs = async () => {
       }
     }
   `;
-  const result = await request(graphqlAPI, query);
+  const result: ResultSlugs = await request(graphqlAPI, query);
  return result.projects;
 };
 
@@ -131,6 +145,6 @@ export const getProjectDetails = async (slug: string) => {
     title
     websiteLink
    }}`;
-  const result = await request(graphqlAPI, query, { slug });
+  const result: ResultProjectDetails = await request(graphqlAPI, query, { slug });
   return result.project;
 };

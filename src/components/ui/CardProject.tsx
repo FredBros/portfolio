@@ -2,8 +2,6 @@ import React from "react";
 import { TechList, Tooltip, ExtLinksProject} from "../";
 import { CardProjectData } from "../../types/data";
 import { CgMoreO } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
-import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
@@ -34,7 +32,7 @@ const CardProject = ({ cardData, isEven, isLargeScreen = false}: Props) => {
         <div className="image-card-wrap">
           <div className="styled-image-wrap">
             <div className="image-layout">
-              <img src={cardData.cardImage.url} />
+              <img src={cardData.cardImage.url} alt="image project"/>
             </div>
           </div>
         </div>

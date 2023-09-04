@@ -1,6 +1,6 @@
 import { ContactsData } from '@/types/data'
 import React from 'react'
-import {GetContactData} from "../services/hygraphRequest"
+import {getContactData} from "../services/hygraphRequest"
 import { ContactPage } from '@/components'
 
 type Props={
@@ -17,7 +17,7 @@ const contact = ({data}:Props) => {
 export default contact
 
 export async function getStaticProps() {
-  const data = await GetContactData();
+  const data = await getContactData();
   return {
     props: {
       data,

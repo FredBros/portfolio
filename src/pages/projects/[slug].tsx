@@ -69,7 +69,7 @@ export const getStaticProps:GetStaticProps = async  ({params})=> {
 export async function getStaticPaths() {
   const data = await getSlugs();
   return {
-    paths: data.map((project: { slug: string }) => ({
+    paths: data.map((project) => ({
       params: { slug: project.slug },
     })),
     fallback: false,
